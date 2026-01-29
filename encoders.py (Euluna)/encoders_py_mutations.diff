@@ -1,8 +1,8 @@
 ================================================================================
 CONSOLIDATED MUTATION DIFF FILE
 FastAPI encoders.py - All Mutations
-Total Mutants: 143
-Killed: 134, Survived: 9
+Total Mutants: 149
+Killed: 134, Survived: 15
 ================================================================================
 
 Mutant #001 - AOR - KILLED
@@ -1058,7 +1058,61 @@ Routine: jsonable_encoder
 +            errors.insert(0, e)
 --------------------------------------------------------------------------------
 
-Mutant #111 - IOD - KILLED
+Mutant #111 - IOD - SURVIVED
+Description: Replace 'in' with 'not in' at line 48
+Routine: decimal_encoder
+--- original (line 48)
++++ mutant (line 48)
+-    results in failed round-tripping between encode and parse.
++    results not in failed round-tripping between encode and parse.
+--------------------------------------------------------------------------------
+
+Mutant #112 - IOD - SURVIVED
+Description: Replace 'in' with 'not in' at line 145
+Routine: jsonable_encoder
+--- original (line 145)
++++ mutant (line 145)
+-            want to use it in the result, so you probably want to leave this set to
++            want to use it not in the result, so you probably want to leave this set to
+--------------------------------------------------------------------------------
+
+Mutant #113 - IOD - SURVIVED
+Description: Replace 'in' with 'not in' at line 195
+Routine: jsonable_encoder
+--- original (line 195)
++++ mutant (line 195)
+-            store internal SQLAlchemy-specific state in attributes named with `_sa`,
++            store internal SQLAlchemy-specific state not in attributes named with `_sa`,
+--------------------------------------------------------------------------------
+
+Mutant #114 - IOD - SURVIVED
+Description: Replace 'in' with 'not in' at line 202
+Routine: jsonable_encoder
+--- original (line 202)
++++ mutant (line 202)
+-    Convert any object to something that can be encoded in JSON.
++    Convert any object to something that can be encoded not in JSON.
+--------------------------------------------------------------------------------
+
+Mutant #115 - IOD - SURVIVED
+Description: Replace 'in' with 'not in' at line 208
+Routine: jsonable_encoder
+--- original (line 208)
++++ mutant (line 208)
+-    in a database that supports only JSON.
++    not in a database that supports only JSON.
+--------------------------------------------------------------------------------
+
+Mutant #116 - IOD - SURVIVED
+Description: Replace 'in' with 'not in' at line 210
+Routine: jsonable_encoder
+--- original (line 210)
++++ mutant (line 210)
+-    Read more about it in the
++    Read more about it not in the
+--------------------------------------------------------------------------------
+
+Mutant #117 - IOD - KILLED
 Description: Replace 'in' with 'not in' at line 215
 Routine: jsonable_encoder
 --- original (line 215)
@@ -1067,7 +1121,7 @@ Routine: jsonable_encoder
 +        if type(obj) not in custom_encoder:
 --------------------------------------------------------------------------------
 
-Mutant #112 - IOD - KILLED
+Mutant #118 - IOD - KILLED
 Description: Replace 'in' with 'not in' at line 278
 Routine: jsonable_encoder
 --- original (line 278)
@@ -1076,7 +1130,7 @@ Routine: jsonable_encoder
 +                and key not in allowed_keys
 --------------------------------------------------------------------------------
 
-Mutant #113 - IOD - KILLED
+Mutant #119 - IOD - KILLED
 Description: Replace 'in' with 'not in' at line 316
 Routine: jsonable_encoder
 --- original (line 316)
@@ -1085,7 +1139,7 @@ Routine: jsonable_encoder
 +    if type(obj) not in ENCODERS_BY_TYPE:
 --------------------------------------------------------------------------------
 
-Mutant #114 - TYP - KILLED
+Mutant #120 - TYP - KILLED
 Description: Negate type check 'isinstance(' at line 61
 Routine: decimal_encoder
 --- original (line 61)
@@ -1094,7 +1148,7 @@ Routine: decimal_encoder
 +    if not isinstance(exponent, int) and exponent >= 0:
 --------------------------------------------------------------------------------
 
-Mutant #115 - TYP - KILLED
+Mutant #121 - TYP - KILLED
 Description: Negate type check 'type(' at line 215
 Routine: jsonable_encoder
 --- original (line 215)
@@ -1103,7 +1157,7 @@ Routine: jsonable_encoder
 +        if str(type(obj) in custom_encoder:
 --------------------------------------------------------------------------------
 
-Mutant #116 - TYP - KILLED
+Mutant #122 - TYP - KILLED
 Description: Negate type check 'type(' at line 216
 Routine: jsonable_encoder
 --- original (line 216)
@@ -1112,7 +1166,7 @@ Routine: jsonable_encoder
 +            return custom_encoder[str(type(obj)](obj)
 --------------------------------------------------------------------------------
 
-Mutant #117 - TYP - KILLED
+Mutant #123 - TYP - KILLED
 Description: Negate type check 'isinstance(' at line 219
 Routine: jsonable_encoder
 --- original (line 219)
@@ -1121,7 +1175,7 @@ Routine: jsonable_encoder
 +                if not isinstance(obj, encoder_type):
 --------------------------------------------------------------------------------
 
-Mutant #118 - TYP - KILLED
+Mutant #124 - TYP - KILLED
 Description: Negate type check 'isinstance(' at line 225
 Routine: jsonable_encoder
 --- original (line 225)
@@ -1130,7 +1184,7 @@ Routine: jsonable_encoder
 +    if not isinstance(obj, BaseModel):
 --------------------------------------------------------------------------------
 
-Mutant #119 - TYP - KILLED
+Mutant #125 - TYP - KILLED
 Description: Negate type check 'is_dataclass(' at line 241
 Routine: jsonable_encoder
 --- original (line 241)
@@ -1139,7 +1193,7 @@ Routine: jsonable_encoder
 +    if dataclasses.not is_dataclass(obj):
 --------------------------------------------------------------------------------
 
-Mutant #120 - TYP - KILLED
+Mutant #126 - TYP - KILLED
 Description: Negate type check 'isinstance(' at line 255
 Routine: jsonable_encoder
 --- original (line 255)
@@ -1148,7 +1202,7 @@ Routine: jsonable_encoder
 +    if not isinstance(obj, Enum):
 --------------------------------------------------------------------------------
 
-Mutant #121 - TYP - KILLED
+Mutant #127 - TYP - KILLED
 Description: Negate type check 'isinstance(' at line 257
 Routine: jsonable_encoder
 --- original (line 257)
@@ -1157,7 +1211,7 @@ Routine: jsonable_encoder
 +    if not isinstance(obj, PurePath):
 --------------------------------------------------------------------------------
 
-Mutant #122 - TYP - KILLED
+Mutant #128 - TYP - KILLED
 Description: Negate type check 'isinstance(' at line 259
 Routine: jsonable_encoder
 --- original (line 259)
@@ -1166,7 +1220,7 @@ Routine: jsonable_encoder
 +    if not isinstance(obj, (str, int, float, type(None))):
 --------------------------------------------------------------------------------
 
-Mutant #123 - TYP - KILLED
+Mutant #129 - TYP - KILLED
 Description: Negate type check 'type(' at line 259
 Routine: jsonable_encoder
 --- original (line 259)
@@ -1175,7 +1229,7 @@ Routine: jsonable_encoder
 +    if isinstance(obj, (str, int, float, str(type(None))):
 --------------------------------------------------------------------------------
 
-Mutant #124 - TYP - KILLED
+Mutant #130 - TYP - KILLED
 Description: Negate type check 'isinstance(' at line 261
 Routine: jsonable_encoder
 --- original (line 261)
@@ -1184,7 +1238,7 @@ Routine: jsonable_encoder
 +    if not isinstance(obj, PydanticUndefinedType):
 --------------------------------------------------------------------------------
 
-Mutant #125 - TYP - KILLED
+Mutant #131 - TYP - KILLED
 Description: Negate type check 'isinstance(' at line 263
 Routine: jsonable_encoder
 --- original (line 263)
@@ -1193,7 +1247,7 @@ Routine: jsonable_encoder
 +    if not isinstance(obj, dict):
 --------------------------------------------------------------------------------
 
-Mutant #126 - TYP - KILLED
+Mutant #132 - TYP - KILLED
 Description: Negate type check 'isinstance(' at line 298
 Routine: jsonable_encoder
 --- original (line 298)
@@ -1202,7 +1256,7 @@ Routine: jsonable_encoder
 +    if not isinstance(obj, (list, set, frozenset, GeneratorType, tuple, deque)):
 --------------------------------------------------------------------------------
 
-Mutant #127 - TYP - KILLED
+Mutant #133 - TYP - KILLED
 Description: Negate type check 'type(' at line 316
 Routine: jsonable_encoder
 --- original (line 316)
@@ -1211,7 +1265,7 @@ Routine: jsonable_encoder
 +    if str(type(obj) in ENCODERS_BY_TYPE:
 --------------------------------------------------------------------------------
 
-Mutant #128 - TYP - KILLED
+Mutant #134 - TYP - KILLED
 Description: Negate type check 'type(' at line 317
 Routine: jsonable_encoder
 --- original (line 317)
@@ -1220,7 +1274,7 @@ Routine: jsonable_encoder
 +        return ENCODERS_BY_TYPE[str(type(obj)](obj)
 --------------------------------------------------------------------------------
 
-Mutant #129 - TYP - KILLED
+Mutant #135 - TYP - KILLED
 Description: Negate type check 'isinstance(' at line 319
 Routine: jsonable_encoder
 --- original (line 319)
@@ -1229,7 +1283,7 @@ Routine: jsonable_encoder
 +        if not isinstance(obj, classes_tuple):
 --------------------------------------------------------------------------------
 
-Mutant #130 - DCI - KILLED
+Mutant #136 - DCI - KILLED
 Description: Replace '&=' with '|=' at line 267
 Routine: jsonable_encoder
 --- original (line 267)
@@ -1238,7 +1292,7 @@ Routine: jsonable_encoder
 +            allowed_keys |= set(include)
 --------------------------------------------------------------------------------
 
-Mutant #131 - DCI - KILLED
+Mutant #137 - DCI - KILLED
 Description: Replace '-=' with '+=' at line 269
 Routine: jsonable_encoder
 --- original (line 269)
@@ -1247,7 +1301,7 @@ Routine: jsonable_encoder
 +            allowed_keys += set(exclude)
 --------------------------------------------------------------------------------
 
-Mutant #132 - FCR - KILLED
+Mutant #138 - FCR - KILLED
 Description: Replace 'tuple(' with 'list(' at line 60
 Routine: decimal_encoder
 --- original (line 60)
@@ -1256,7 +1310,7 @@ Routine: decimal_encoder
 +    exponent = dec_value.as_list().exponent
 --------------------------------------------------------------------------------
 
-Mutant #133 - FCR - KILLED
+Mutant #139 - FCR - KILLED
 Description: Replace 'int(' with 'float(' at line 62
 Routine: decimal_encoder
 --- original (line 62)
@@ -1265,7 +1319,7 @@ Routine: decimal_encoder
 +        return float(dec_value)
 --------------------------------------------------------------------------------
 
-Mutant #134 - FCR - KILLED
+Mutant #140 - FCR - KILLED
 Description: Replace 'float(' with 'int(' at line 64
 Routine: decimal_encoder
 --- original (line 64)
@@ -1274,7 +1328,7 @@ Routine: decimal_encoder
 +        return int(dec_value)
 --------------------------------------------------------------------------------
 
-Mutant #135 - FCR - KILLED
+Mutant #141 - FCR - KILLED
 Description: Replace 'dict(' with 'list(' at line 100
 Routine: generate_encoders_by_class_tuples
 --- original (line 100)
@@ -1283,7 +1337,7 @@ Routine: generate_encoders_by_class_tuples
 +    encoders_by_class_tuples: dict[Callable[[Any], Any], tuple[Any, ...]] = defaultlist(
 --------------------------------------------------------------------------------
 
-Mutant #136 - FCR - KILLED
+Mutant #142 - FCR - KILLED
 Description: Replace 'set(' with 'frozenset(' at line 222
 Routine: jsonable_encoder
 --- original (line 222)
@@ -1292,7 +1346,7 @@ Routine: jsonable_encoder
 +        include = frozenset(include)
 --------------------------------------------------------------------------------
 
-Mutant #137 - FCR - KILLED
+Mutant #143 - FCR - KILLED
 Description: Replace 'set(' with 'frozenset(' at line 224
 Routine: jsonable_encoder
 --- original (line 224)
@@ -1301,7 +1355,7 @@ Routine: jsonable_encoder
 +        exclude = frozenset(exclude)
 --------------------------------------------------------------------------------
 
-Mutant #138 - FCR - KILLED
+Mutant #144 - FCR - KILLED
 Description: Replace 'dict(' with 'list(' at line 243
 Routine: jsonable_encoder
 --- original (line 243)
@@ -1310,7 +1364,7 @@ Routine: jsonable_encoder
 +        obj_dict = dataclasses.aslist(obj)
 --------------------------------------------------------------------------------
 
-Mutant #139 - FCR - KILLED
+Mutant #145 - FCR - KILLED
 Description: Replace 'str(' with 'repr(' at line 258
 Routine: jsonable_encoder
 --- original (line 258)
@@ -1319,7 +1373,7 @@ Routine: jsonable_encoder
 +        return repr(obj)
 --------------------------------------------------------------------------------
 
-Mutant #140 - FCR - KILLED
+Mutant #146 - FCR - KILLED
 Description: Replace 'set(' with 'frozenset(' at line 265
 Routine: jsonable_encoder
 --- original (line 265)
@@ -1328,7 +1382,7 @@ Routine: jsonable_encoder
 +        allowed_keys = frozenset(obj.keys())
 --------------------------------------------------------------------------------
 
-Mutant #141 - FCR - KILLED
+Mutant #147 - FCR - KILLED
 Description: Replace 'set(' with 'frozenset(' at line 267
 Routine: jsonable_encoder
 --- original (line 267)
@@ -1337,7 +1391,7 @@ Routine: jsonable_encoder
 +            allowed_keys &= frozenset(include)
 --------------------------------------------------------------------------------
 
-Mutant #142 - FCR - KILLED
+Mutant #148 - FCR - KILLED
 Description: Replace 'set(' with 'frozenset(' at line 269
 Routine: jsonable_encoder
 --- original (line 269)
@@ -1346,7 +1400,7 @@ Routine: jsonable_encoder
 +            allowed_keys -= frozenset(exclude)
 --------------------------------------------------------------------------------
 
-Mutant #143 - FCR - KILLED
+Mutant #149 - FCR - KILLED
 Description: Replace 'dict(' with 'list(' at line 327
 Routine: jsonable_encoder
 --- original (line 327)
