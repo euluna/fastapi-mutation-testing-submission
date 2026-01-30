@@ -1,0 +1,654 @@
+--- original (line 144)
++++ mutant (line 144)
+-            main_dict[key] = main_dict[key] + update_dict[key]
+
++            main_dict[key] = main_dict[key] - update_dict[key]
+
+--- original (line 144)
++++ mutant (line 144)
+-            main_dict[key] = main_dict[key] + update_dict[key]
+
++            main_dict[key] = main_dict[key] * update_dict[key]
+
+--- original (line 160)
++++ mutant (line 160)
+-    items = (first_item,) + extra_items
+
++    items = (first_item,) - extra_items
+
+--- original (line 160)
++++ mutant (line 160)
+-    items = (first_item,) + extra_items
+
++    items = (first_item,) * extra_items
+
+--- original (line 53)
++++ mutant (line 53)
+-    return not (current_status_code < 200 or current_status_code in {204, 205, 304})
+
++    return not (current_status_code > 200 or current_status_code in {204, 205, 304})
+
+--- original (line 53)
++++ mutant (line 53)
+-    return not (current_status_code < 200 or current_status_code in {204, 205, 304})
+
++    return not (current_status_code < 200 and current_status_code in {204, 205, 304})
+
+--- original (line 88)
++++ mutant (line 88)
+-    class_validators = class_validators or {}
+
++    class_validators = class_validators and {}
+
+--- original (line 90)
++++ mutant (line 90)
+-    field_info = field_info or FieldInfo(annotation=type_, default=default, alias=alias)
+
++    field_info = field_info and FieldInfo(annotation=type_, default=default, alias=alias)
+
+--- original (line 113)
++++ mutant (line 113)
+-        "it is not used internally, and will be removed soon",
+
++        "it is not used internally, or will be removed soon",
+
+--- original (line 135)
++++ mutant (line 135)
+-            and isinstance(main_dict[key], dict)
+
++            or isinstance(main_dict[key], dict)
+
+--- original (line 136)
++++ mutant (line 136)
+-            and isinstance(value, dict)
+
++            or isinstance(value, dict)
+
+--- original (line 141)
++++ mutant (line 141)
+-            and isinstance(main_dict[key], list)
+
++            or isinstance(main_dict[key], list)
+
+--- original (line 142)
++++ mutant (line 142)
+-            and isinstance(update_dict[key], list)
+
++            or isinstance(update_dict[key], list)
+
+--- original (line 41)
++++ mutant (line 41)
+-        return True
+
++        return False
+
+--- original (line 44)
++++ mutant (line 44)
+-        "default",
+
++        "x",
+
+--- original (line 45)
++++ mutant (line 45)
+-        "1XX",
+
++        "default",
+
+--- original (line 46)
++++ mutant (line 46)
+-        "2XX",
+
++        "3XX",
+
+--- original (line 47)
++++ mutant (line 47)
+-        "3XX",
+
++        "2XX",
+
+--- original (line 48)
++++ mutant (line 48)
+-        "4XX",
+
++        "5XX",
+
+--- original (line 49)
++++ mutant (line 49)
+-        "5XX",
+
++        "4XX",
+
+--- original (line 51)
++++ mutant (line 51)
+-        return True
+
++        return False
+
+--- original (line 75)
++++ mutant (line 75)
+-    default: Optional[Any] = Undefined,
+
++    default: Optional[Any] = None,
+
+--- original (line 76)
++++ mutant (line 76)
+-    required: Union[bool, UndefinedType] = Undefined,
+
++    required: Union[bool, UndefinedType] = None,
+
+--- original (line 80)
++++ mutant (line 80)
+-    mode: Literal["validation", "serialization"] = "validation",
+
++    mode: Literal["validation", "serialization"] = "serialization",
+
+--- original (line 80)
++++ mutant (line 80)
+-    mode: Literal["validation", "serialization"] = "validation",
+
++    mode: Literal["x", "serialization"] = "validation",
+
+--- original (line 80)
++++ mutant (line 80)
+-    mode: Literal["validation", "serialization"] = "validation",
+
++    mode: Literal["validation", "validation"] = "validation",
+
+--- original (line 81)
++++ mutant (line 81)
+-    version: Literal["1", "auto"] = "auto",
+
++    version: Literal["1", "auto"] = "1",
+
+--- original (line 40)
++++ mutant (line 40)
+-    if status_code is None:
+
++    if not (status_code is None):
+
+--- original (line 41)
++++ mutant (line 41)
+-        return True
+
++        return None
+
+--- original (line 41)
++++ mutant (line 41)
+-        return True
+
++        return False
+
+--- original (line 51)
++++ mutant (line 51)
+-        return True
+
++        return None
+
+--- original (line 51)
++++ mutant (line 51)
+-        return True
+
++        return False
+
+--- original (line 53)
++++ mutant (line 53)
+-    return not (current_status_code < 200 or current_status_code in {204, 205, 304})
+
++    return None
+
+--- original (line 57)
++++ mutant (line 57)
+-    return set(re.findall("{(.*?)}", path))
+
++    return None
+
+--- original (line 93)
++++ mutant (line 93)
+-        return v2.ModelField(**kwargs)  # type: ignore[return-value,arg-type]
+
++        return None
+
+--- original (line 105)
++++ mutant (line 105)
+-    return field
+
++    return None
+
+--- original (line 120)
++++ mutant (line 120)
+-    return operation_id
+
++    return None
+
+--- original (line 128)
++++ mutant (line 128)
+-    return operation_id
+
++    return None
+
+--- original (line 163)
++++ mutant (line 163)
+-            return item
+
++            return None
+
+--- original (line 164)
++++ mutant (line 164)
+-    return first_item
+
++    return None
+
+--- original (line 80)
++++ mutant (line 80)
+-    mode: Literal["validation", "serialization"] = "validation",
+
++    mode: Literal["", "serialization"] = "validation",
+
+--- original (line 81)
++++ mutant (line 81)
+-    version: Literal["1", "auto"] = "auto",
+
++    version: Literal["", "auto"] = "auto",
+
+--- original (line 119)
++++ mutant (line 119)
+-    operation_id = f"{operation_id}_{method.lower()}"
+
++    operation_id = f"{operation_id}_{method}"
+
+--- original (line 127)
++++ mutant (line 127)
+-    operation_id = f"{operation_id}_{list(route.methods)[0].lower()}"
+
++    operation_id = f"{operation_id}_{list(route.methods)[0]}"
+
+--- original (line 34)
++++ mutant (line 34)
+-_CLONED_TYPES_CACHE: MutableMapping[type[BaseModel], type[BaseModel]] = (
+
++pass  # deleted assignment
+
+--- original (line 52)
++++ mutant (line 52)
+-    current_status_code = int(status_code)
+
++    pass  # deleted assignment
+
+--- original (line 60)
++++ mutant (line 60)
+-_invalid_args_message = (
+
++pass  # deleted assignment
+
+--- original (line 74)
++++ mutant (line 74)
+-    class_validators: Optional[dict[str, Validator]] = None,
+
++    pass  # deleted assignment
+
+--- original (line 75)
++++ mutant (line 75)
+-    default: Optional[Any] = Undefined,
+
++    pass  # deleted assignment
+
+--- original (line 76)
++++ mutant (line 76)
+-    required: Union[bool, UndefinedType] = Undefined,
+
++    pass  # deleted assignment
+
+--- original (line 77)
++++ mutant (line 77)
+-    model_config: Union[type[BaseConfig], None] = None,
+
++    pass  # deleted assignment
+
+--- original (line 78)
++++ mutant (line 78)
+-    field_info: Optional[FieldInfo] = None,
+
++    pass  # deleted assignment
+
+--- original (line 79)
++++ mutant (line 79)
+-    alias: Optional[str] = None,
+
++    pass  # deleted assignment
+
+--- original (line 80)
++++ mutant (line 80)
+-    mode: Literal["validation", "serialization"] = "validation",
+
++    pass  # deleted assignment
+
+--- original (line 81)
++++ mutant (line 81)
+-    version: Literal["1", "auto"] = "auto",
+
++    pass  # deleted assignment
+
+--- original (line 84)
++++ mutant (line 84)
+-        raise PydanticV1NotSupportedError(
+
++        pass  # removed raise
+
+--- original (line 88)
++++ mutant (line 88)
+-    class_validators = class_validators or {}
+
++    pass  # deleted assignment
+
+--- original (line 90)
++++ mutant (line 90)
+-    field_info = field_info or FieldInfo(annotation=type_, default=default, alias=alias)
+
++    pass  # deleted assignment
+
+--- original (line 91)
++++ mutant (line 91)
+-    kwargs = {"mode": mode, "name": name, "field_info": field_info}
+
++    pass  # deleted assignment
+
+--- original (line 95)
++++ mutant (line 95)
+-        raise fastapi.exceptions.FastAPIError(
+
++        pass  # removed raise
+
+--- original (line 103)
++++ mutant (line 103)
+-    cloned_types: Optional[MutableMapping[type[BaseModel], type[BaseModel]]] = None,
+
++    pass  # deleted assignment
+
+--- original (line 117)
++++ mutant (line 117)
+-    operation_id = f"{name}{path}"
+
++    pass  # deleted assignment
+
+--- original (line 118)
++++ mutant (line 118)
+-    operation_id = re.sub(r"\W", "_", operation_id)
+
++    pass  # deleted assignment
+
+--- original (line 119)
++++ mutant (line 119)
+-    operation_id = f"{operation_id}_{method.lower()}"
+
++    pass  # deleted assignment
+
+--- original (line 124)
++++ mutant (line 124)
+-    operation_id = f"{route.name}{route.path_format}"
+
++    pass  # deleted assignment
+
+--- original (line 125)
++++ mutant (line 125)
+-    operation_id = re.sub(r"\W", "_", operation_id)
+
++    pass  # deleted assignment
+
+--- original (line 127)
++++ mutant (line 127)
+-    operation_id = f"{operation_id}_{list(route.methods)[0].lower()}"
+
++    pass  # deleted assignment
+
+--- original (line 144)
++++ mutant (line 144)
+-            main_dict[key] = main_dict[key] + update_dict[key]
+
++            pass  # deleted assignment
+
+--- original (line 146)
++++ mutant (line 146)
+-            main_dict[key] = value
+
++            pass  # deleted assignment
+
+--- original (line 160)
++++ mutant (line 160)
+-    items = (first_item,) + extra_items
+
++    pass  # deleted assignment
+
+--- original (line 52)
++++ mutant (line 52)
+-    current_status_code = int(status_code)
+
++    current_status_code = None
+
+--- original (line 60)
++++ mutant (line 60)
+-_invalid_args_message = (
+
++_invalid_args_message = None
+
+--- original (line 88)
++++ mutant (line 88)
+-    class_validators = class_validators or {}
+
++    class_validators = None
+
+--- original (line 90)
++++ mutant (line 90)
+-    field_info = field_info or FieldInfo(annotation=type_, default=default, alias=alias)
+
++    field_info = None
+
+--- original (line 91)
++++ mutant (line 91)
+-    kwargs = {"mode": mode, "name": name, "field_info": field_info}
+
++    kwargs = None
+
+--- original (line 117)
++++ mutant (line 117)
+-    operation_id = f"{name}{path}"
+
++    operation_id = None
+
+--- original (line 118)
++++ mutant (line 118)
+-    operation_id = re.sub(r"\W", "_", operation_id)
+
++    operation_id = None
+
+--- original (line 119)
++++ mutant (line 119)
+-    operation_id = f"{operation_id}_{method.lower()}"
+
++    operation_id = None
+
+--- original (line 124)
++++ mutant (line 124)
+-    operation_id = f"{route.name}{route.path_format}"
+
++    operation_id = None
+
+--- original (line 125)
++++ mutant (line 125)
+-    operation_id = re.sub(r"\W", "_", operation_id)
+
++    operation_id = None
+
+--- original (line 127)
++++ mutant (line 127)
+-    operation_id = f"{operation_id}_{list(route.methods)[0].lower()}"
+
++    operation_id = None
+
+--- original (line 144)
++++ mutant (line 144)
+-            main_dict[key] = main_dict[key] + update_dict[key]
+
++            main_dict[key] = None
+
+--- original (line 146)
++++ mutant (line 146)
+-            main_dict[key] = value
+
++            main_dict[key] = None
+
+--- original (line 160)
++++ mutant (line 160)
+-    items = (first_item,) + extra_items
+
++    items = None
+
+--- original (line 43)
++++ mutant (line 43)
+-    if status_code in {
+
++    if status_code not in {
+
+--- original (line 53)
++++ mutant (line 53)
+-    return not (current_status_code < 200 or current_status_code in {204, 205, 304})
+
++    return not (current_status_code < 200 or current_status_code not in {204, 205, 304})
+
+--- original (line 132)
++++ mutant (line 132)
+-    for key, value in update_dict.items():
+
++    for key, value not in update_dict.items():
+
+--- original (line 134)
++++ mutant (line 134)
+-            key in main_dict
+
++            key not in main_dict
+
+--- original (line 140)
++++ mutant (line 140)
+-            key in main_dict
+
++            key not in main_dict
+
+--- original (line 161)
++++ mutant (line 161)
+-    for item in items:
+
++    for item not in items:
+
+--- original (line 53)
++++ mutant (line 53)
+-    return not (current_status_code < 200 or current_status_code in {204, 205, 304})
+
++    return not (current_status_code <= 200 or current_status_code in {204, 205, 304})
+
+--- original (line 53)
++++ mutant (line 53)
+-    return not (current_status_code < 200 or current_status_code in {204, 205, 304})
+
++    return not (current_status_code < 199 or current_status_code in {204, 205, 304})
+
+--- original (line 53)
++++ mutant (line 53)
+-    return not (current_status_code < 200 or current_status_code in {204, 205, 304})
+
++    return not (current_status_code < 200 or current_status_code in {203, 205, 304})
+
+--- original (line 53)
++++ mutant (line 53)
+-    return not (current_status_code < 200 or current_status_code in {204, 205, 304})
+
++    return not (current_status_code < 200 or current_status_code in {204, 204, 304})
+
+--- original (line 53)
++++ mutant (line 53)
+-    return not (current_status_code < 200 or current_status_code in {204, 205, 304})
+
++    return not (current_status_code < 200 or current_status_code in {204, 205, 303})
+
+--- original (line 81)
++++ mutant (line 81)
+-    version: Literal["1", "auto"] = "auto",
+
++    version: Literal["0", "auto"] = "auto",
+
+--- original (line 115)
++++ mutant (line 115)
+-        stacklevel=2,
+
++        stacklevel=1,
+
+--- original (line 127)
++++ mutant (line 127)
+-    operation_id = f"{operation_id}_{list(route.methods)[0].lower()}"
+
++    operation_id = f"{operation_id}_{list(route.methods)[1].lower()}"
+
+--- original (line 40)
++++ mutant (line 40)
+-    if status_code is None:
+
++    if status_code is not None:
+
+--- original (line 88)
++++ mutant (line 88)
+-    class_validators = class_validators or {}
+
++    class_validators = class_validators or []
+
+--- original (line 88)
++++ mutant (line 88)
+-    class_validators = class_validators or {}
+
++    class_validators = class_validators or None
+
+--- original (line 97)
++++ mutant (line 97)
+-        ) from None
+
++        )
+
+--- original (line 43)
++++ mutant (line 43)
+-    if status_code in {
+
++    if status_code in [
+
+--- original (line 53)
++++ mutant (line 53)
+-    return not (current_status_code < 200 or current_status_code in {204, 205, 304})
+
++    return not (current_status_code < 200 or current_status_code in [204, 205, 304})
+
+--- original (line 93)
++++ mutant (line 93)
+-        return v2.ModelField(**kwargs)  # type: ignore[return-value,arg-type]
+
++        return v2.ModelField(**kwargs)
+
+--- original (line 144)
++++ mutant (line 144)
+-            main_dict[key] = main_dict[key] + update_dict[key]
+
++            main_dict[key] = main_dict[key] // update_dict[key]
+
+--- original (line 160)
++++ mutant (line 160)
+-    items = (first_item,) + extra_items
+
++    items = (first_item,) // extra_items
+
+--- original (line 112)
++++ mutant (line 112)
+-        message="fastapi.utils.generate_operation_id_for_path() was deprecated, "
+
++        message="fastapi.utils.generate_operation_id_for_path() is deprecated, "
+
+--- original (line 113)
++++ mutant (line 113)
+-        "it is not used internally, and will be removed soon",
+
++        "it is not used internally, and will be removed later",
+
