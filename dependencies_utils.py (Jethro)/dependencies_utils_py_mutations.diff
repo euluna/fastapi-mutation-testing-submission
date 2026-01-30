@@ -1,0 +1,2368 @@
+================================================================================
+MUTATION TESTING - ALL MUTANTS DIFF FILE
+Target: fastapi/dependencies/utils.py
+Generated: 2026-01-29 00:05:40
+Total Mutants: 254
+================================================================================
+
+OPERATOR SUMMARY
+----------------------------------------
+AOR: 8 mutants - Arithmetic Operator Replacement (+, -, *, /)
+CDL: 25 mutants - Constant Deletion/Replacement
+COR: 11 mutants - Conditional Operator Replacement
+EXS: 3 mutants - Exception Swallowing
+IOD: 33 mutants - In/Not-in Operator Deletion
+LCR: 47 mutants - Logical Connector Replacement (and, or)
+RIL: 55 mutants - Return Statement Mutation
+ROR: 21 mutants - Relational Operator Replacement (==, !=, <, >, <=, >=)
+STR: 4 mutants - String Mutation
+UOI: 47 mutants - Unary Operator Insertion (not)
+
+================================================================================
+
+================================================================================
+OPERATOR: AOR - Arithmetic Operator Replacement (+, -, *, /)
+Count: 8 mutants
+================================================================================
+
+------------------------------------------------------------
+Mutant #1 [AOR]
+Description: Replace '+' with '-' at line 137
+------------------------------------------------------------
+--- original (line 137)
++++ mutant (line 137)
+-    use_parent_oauth_scopes = (parent_oauth_scopes or []) + (
++    use_parent_oauth_scopes = (parent_oauth_scopes or []) - (
+
+------------------------------------------------------------
+Mutant #2 [AOR]
+Description: Replace '+' with '*' at line 137
+------------------------------------------------------------
+--- original (line 137)
++++ mutant (line 137)
+-    use_parent_oauth_scopes = (parent_oauth_scopes or []) + (
++    use_parent_oauth_scopes = (parent_oauth_scopes or []) * (
+
+------------------------------------------------------------
+Mutant #3 [AOR]
+Description: Replace '+' with '-' at line 197
+------------------------------------------------------------
+--- original (line 197)
++++ mutant (line 197)
+-    return path_params + query_params + header_params + cookie_params
++    return path_params - query_params + header_params + cookie_params
+
+------------------------------------------------------------
+Mutant #4 [AOR]
+Description: Replace '+' with '*' at line 197
+------------------------------------------------------------
+--- original (line 197)
++++ mutant (line 197)
+-    return path_params + query_params + header_params + cookie_params
++    return path_params * query_params + header_params + cookie_params
+
+------------------------------------------------------------
+Mutant #5 [AOR]
+Description: Replace '+' with '-' at line 270
+------------------------------------------------------------
+--- original (line 270)
++++ mutant (line 270)
+-    current_scopes = (parent_oauth_scopes or []) + (own_oauth_scopes or [])
++    current_scopes = (parent_oauth_scopes or []) - (own_oauth_scopes or [])
+
+------------------------------------------------------------
+Mutant #6 [AOR]
+Description: Replace '+' with '*' at line 270
+------------------------------------------------------------
+--- original (line 270)
++++ mutant (line 270)
+-    current_scopes = (parent_oauth_scopes or []) + (own_oauth_scopes or [])
++    current_scopes = (parent_oauth_scopes or []) * (own_oauth_scopes or [])
+
+------------------------------------------------------------
+Mutant #7 [AOR]
+Description: Replace '+' with '-' at line 666
+------------------------------------------------------------
+--- original (line 666)
++++ mutant (line 666)
+-    errors += path_errors + query_errors + header_errors + cookie_errors
++    errors += path_errors - query_errors + header_errors + cookie_errors
+
+------------------------------------------------------------
+Mutant #8 [AOR]
+Description: Replace '+' with '*' at line 666
+------------------------------------------------------------
+--- original (line 666)
++++ mutant (line 666)
+-    errors += path_errors + query_errors + header_errors + cookie_errors
++    errors += path_errors * query_errors + header_errors + cookie_errors
+
+
+================================================================================
+OPERATOR: CDL - Constant Deletion/Replacement
+Count: 25 mutants
+================================================================================
+
+------------------------------------------------------------
+Mutant #81 [CDL]
+Description: Replace '= False' with '= True' at line 130
+------------------------------------------------------------
+--- original (line 130)
++++ mutant (line 130)
+-    skip_repeats: bool = False,
++    skip_repeats: bool = True,
+
+------------------------------------------------------------
+Mutant #82 [CDL]
+Description: Replace 'return None' with 'return 0' at line 235
+------------------------------------------------------------
+--- original (line 235)
++++ mutant (line 235)
+-            return None
++            return 0
+
+------------------------------------------------------------
+Mutant #83 [CDL]
+Description: Replace 'return None' with 'return 0' at line 245
+------------------------------------------------------------
+--- original (line 245)
++++ mutant (line 245)
+-        return None
++        return 0
+
+------------------------------------------------------------
+Mutant #84 [CDL]
+Description: Replace '= True' with '= False' at line 258
+------------------------------------------------------------
+--- original (line 258)
++++ mutant (line 258)
+-    use_cache: bool = True,
++    use_cache: bool = False,
+
+------------------------------------------------------------
+Mutant #85 [CDL]
+Description: Replace 'return True' with 'return False' at line 331
+------------------------------------------------------------
+--- original (line 331)
++++ mutant (line 331)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #86 [CDL]
+Description: Replace 'return True' with 'return False' at line 334
+------------------------------------------------------------
+--- original (line 334)
++++ mutant (line 334)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #87 [CDL]
+Description: Replace 'return True' with 'return False' at line 337
+------------------------------------------------------------
+--- original (line 337)
++++ mutant (line 337)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #88 [CDL]
+Description: Replace 'return True' with 'return False' at line 340
+------------------------------------------------------------
+--- original (line 340)
++++ mutant (line 340)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #89 [CDL]
+Description: Replace 'return True' with 'return False' at line 343
+------------------------------------------------------------
+--- original (line 343)
++++ mutant (line 343)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #90 [CDL]
+Description: Replace 'return True' with 'return False' at line 346
+------------------------------------------------------------
+--- original (line 346)
++++ mutant (line 346)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #91 [CDL]
+Description: Replace 'return None' with 'return 0' at line 347
+------------------------------------------------------------
+--- original (line 347)
++++ mutant (line 347)
+-    return None
++    return 0
+
+------------------------------------------------------------
+Mutant #92 [CDL]
+Description: Replace 'return None' with 'return 0' at line 708
+------------------------------------------------------------
+--- original (line 708)
++++ mutant (line 708)
+-            return None, [get_missing_field_error(loc=loc)]
++            return 0, [get_missing_field_error(loc=loc)]
+
+------------------------------------------------------------
+Mutant #93 [CDL]
+Description: Replace 'return None' with 'return 0' at line 714
+------------------------------------------------------------
+--- original (line 714)
++++ mutant (line 714)
+-        return None, new_errors
++        return 0, new_errors
+
+------------------------------------------------------------
+Mutant #94 [CDL]
+Description: Replace '= False' with '= True' at line 755
+------------------------------------------------------------
+--- original (line 755)
++++ mutant (line 755)
+-    single_not_embedded_field = False
++    single_not_embedded_field = True
+
+------------------------------------------------------------
+Mutant #95 [CDL]
+Description: Replace '= True' with '= False' at line 756
+------------------------------------------------------------
+--- original (line 756)
++++ mutant (line 756)
+-    default_convert_underscores = True
++    default_convert_underscores = False
+
+------------------------------------------------------------
+Mutant #96 [CDL]
+Description: Replace '= True' with '= False' at line 759
+------------------------------------------------------------
+--- original (line 759)
++++ mutant (line 759)
+-        single_not_embedded_field = True
++        single_not_embedded_field = False
+
+------------------------------------------------------------
+Mutant #97 [CDL]
+Description: Replace 'return False' with 'return True' at line 834
+------------------------------------------------------------
+--- original (line 834)
++++ mutant (line 834)
+-        return False
++        return True
+
+------------------------------------------------------------
+Mutant #98 [CDL]
+Description: Replace 'return False' with 'return True' at line 840
+------------------------------------------------------------
+--- original (line 840)
++++ mutant (line 840)
+-            return False
++            return True
+
+------------------------------------------------------------
+Mutant #99 [CDL]
+Description: Replace 'return True' with 'return False' at line 842
+------------------------------------------------------------
+--- original (line 842)
++++ mutant (line 842)
+-    return True
++    return False
+
+------------------------------------------------------------
+Mutant #100 [CDL]
+Description: Replace 'return False' with 'return True' at line 847
+------------------------------------------------------------
+--- original (line 847)
++++ mutant (line 847)
+-        return False
++        return True
+
+------------------------------------------------------------
+Mutant #101 [CDL]
+Description: Replace 'return True' with 'return False' at line 853
+------------------------------------------------------------
+--- original (line 853)
++++ mutant (line 853)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #102 [CDL]
+Description: Replace 'return True' with 'return False' at line 857
+------------------------------------------------------------
+--- original (line 857)
++++ mutant (line 857)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #103 [CDL]
+Description: Replace 'return True' with 'return False' at line 865
+------------------------------------------------------------
+--- original (line 865)
++++ mutant (line 865)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #104 [CDL]
+Description: Replace 'return False' with 'return True' at line 866
+------------------------------------------------------------
+--- original (line 866)
++++ mutant (line 866)
+-    return False
++    return True
+
+------------------------------------------------------------
+Mutant #105 [CDL]
+Description: Replace 'return None' with 'return 0' at line 980
+------------------------------------------------------------
+--- original (line 980)
++++ mutant (line 980)
+-        return None
++        return 0
+
+
+================================================================================
+OPERATOR: COR - Conditional Operator Replacement
+Count: 11 mutants
+================================================================================
+
+------------------------------------------------------------
+Mutant #248 [COR]
+Description: Replace 'and' with 'or' in condition at line 117
+------------------------------------------------------------
+--- original (line 117)
++++ mutant (line 117)
+-    if isinstance(depends, params.Security) and depends.scopes:
++    if isinstance(depends, params.Security) or depends.scopes:
+
+------------------------------------------------------------
+Mutant #249 [COR]
+Description: Replace 'and' with 'or' in condition at line 162
+------------------------------------------------------------
+--- original (line 162)
++++ mutant (line 162)
+-        if skip_repeats and sub_dependant.cache_key in visited:
++        if skip_repeats or sub_dependant.cache_key in visited:
+
+------------------------------------------------------------
+Mutant #250 [COR]
+Description: Replace 'and' with 'or' in condition at line 185
+------------------------------------------------------------
+--- original (line 185)
++++ mutant (line 185)
+-    if len(fields) == 1 and lenient_issubclass(first_field.type_, BaseModel):
++    if len(fields) == 1 or lenient_issubclass(first_field.type_, BaseModel):
+
+------------------------------------------------------------
+Mutant #251 [COR]
+Description: Replace 'and' with 'or' in condition at line 441
+------------------------------------------------------------
+--- original (line 441)
++++ mutant (line 441)
+-    if depends is not None and depends.dependency is None:
++    if depends is not None or depends.dependency is None:
+
+------------------------------------------------------------
+Mutant #252 [COR]
+Description: Replace 'and' with 'or' in condition at line 496
+------------------------------------------------------------
+--- original (line 496)
++++ mutant (line 496)
+-        if not field_info.alias and getattr(field_info, "convert_underscores", None):
++        if not field_info.alias or getattr(field_info, "convert_underscores", None):
+
+------------------------------------------------------------
+Mutant #253 [COR]
+Description: Replace 'and' with 'or' in condition at line 629
+------------------------------------------------------------
+--- original (line 629)
++++ mutant (line 629)
+-        if sub_dependant.use_cache and sub_dependant.cache_key in dependency_cache:
++        if sub_dependant.use_cache or sub_dependant.cache_key in dependency_cache:
+
+------------------------------------------------------------
+Mutant #254 [COR]
+Description: Replace 'and' with 'or' in condition at line 680
+------------------------------------------------------------
+--- original (line 680)
++++ mutant (line 680)
+-    if dependant.request_param_name and isinstance(request, Request):
++    if dependant.request_param_name or isinstance(request, Request):
+
+------------------------------------------------------------
+Mutant #255 [COR]
+Description: Replace 'and' with 'or' in condition at line 723
+------------------------------------------------------------
+--- original (line 723)
++++ mutant (line 723)
+-    if is_sequence_field(field) and isinstance(values, (ImmutableMultiDict, Headers)):
++    if is_sequence_field(field) or isinstance(values, (ImmutableMultiDict, Headers)):
+
+------------------------------------------------------------
+Mutant #256 [COR]
+Description: Replace 'and' with 'or' in condition at line 757
+------------------------------------------------------------
+--- original (line 757)
++++ mutant (line 757)
+-    if len(fields) == 1 and lenient_issubclass(first_field.type_, BaseModel):
++    if len(fields) == 1 or lenient_issubclass(first_field.type_, BaseModel):
+
+------------------------------------------------------------
+Mutant #257 [COR]
+Description: Replace 'and' with 'or' in condition at line 791
+------------------------------------------------------------
+--- original (line 791)
++++ mutant (line 791)
+-                if isinstance(value, list) and (len(value) == 1):
++                if isinstance(value, list) or (len(value) == 1):
+
+------------------------------------------------------------
+Mutant #258 [COR]
+Description: Replace 'and' with 'or' in condition at line 833
+------------------------------------------------------------
+--- original (line 833)
++++ mutant (line 833)
+-    if origin is not Union and origin is not UnionType:
++    if origin is not Union or origin is not UnionType:
+
+
+================================================================================
+OPERATOR: EXS - Exception Swallowing
+Count: 3 mutants
+================================================================================
+
+------------------------------------------------------------
+Mutant #212 [EXS]
+Description: Remove raise statement at line 106
+------------------------------------------------------------
+--- original (line 106)
++++ mutant (line 106)
+-                raise RuntimeError(multipart_incorrect_install_error) from None
++                pass  # Removed raise
+
+------------------------------------------------------------
+Mutant #213 [EXS]
+Description: Remove raise statement at line 109
+------------------------------------------------------------
+--- original (line 109)
++++ mutant (line 109)
+-            raise RuntimeError(multipart_not_installed_error) from None
++            pass  # Removed raise
+
+------------------------------------------------------------
+Mutant #214 [EXS]
+Description: Remove raise statement at line 290
+------------------------------------------------------------
+--- original (line 290)
++++ mutant (line 290)
+-                raise DependencyScopeError(
++                pass  # Removed raise
+
+
+================================================================================
+OPERATOR: IOD - In/Not-in Operator Deletion
+Count: 33 mutants
+================================================================================
+
+------------------------------------------------------------
+Mutant #215 [IOD]
+Description: Replace 'in' with 'not in' at line 161
+------------------------------------------------------------
+--- original (line 161)
++++ mutant (line 161)
+-    for sub_dependant in dependant.dependencies:
++    for sub_dependant not in dependant.dependencies:
+
+------------------------------------------------------------
+Mutant #216 [IOD]
+Description: Replace 'in' with 'not in' at line 162
+------------------------------------------------------------
+--- original (line 162)
++++ mutant (line 162)
+-        if skip_repeats and sub_dependant.cache_key in visited:
++        if skip_repeats and sub_dependant.cache_key not in visited:
+
+------------------------------------------------------------
+Mutant #217 [IOD]
+Description: Replace 'in' with 'not in' at line 224
+------------------------------------------------------------
+--- original (line 224)
++++ mutant (line 224)
+-        for param in signature.parameters.values()
++        for param not in signature.parameters.values()
+
+------------------------------------------------------------
+Mutant #218 [IOD]
+Description: Replace 'in' with 'not in' at line 274
+------------------------------------------------------------
+--- original (line 274)
++++ mutant (line 274)
+-    for param_name, param in signature_params.items():
++    for param_name, param not in signature_params.items():
+
+------------------------------------------------------------
+Mutant #219 [IOD]
+Description: Replace 'in' with 'not in' at line 275
+------------------------------------------------------------
+--- original (line 275)
++++ mutant (line 275)
+-        is_path_param = param_name in path_param_names
++        is_path_param = param_name not in path_param_names
+
+------------------------------------------------------------
+Mutant #220 [IOD]
+Description: Replace 'in' with 'not in' at line 377
+------------------------------------------------------------
+--- original (line 377)
++++ mutant (line 377)
+-            for arg in annotated_args[1:]
++            for arg not in annotated_args[1:]
+
+------------------------------------------------------------
+Mutant #221 [IOD]
+Description: Replace 'in' with 'not in' at line 382
+------------------------------------------------------------
+--- original (line 382)
++++ mutant (line 382)
+-            for arg in fastapi_annotations
++            for arg not in fastapi_annotations
+
+------------------------------------------------------------
+Mutant #222 [IOD]
+Description: Replace 'in' with 'not in' at line 422
+------------------------------------------------------------
+--- original (line 422)
++++ mutant (line 422)
+-            "Cannot specify `Depends` in `Annotated` and default value"
++            "Cannot specify `Depends` not in `Annotated` and default value"
+
+------------------------------------------------------------
+Mutant #223 [IOD]
+Description: Replace 'in' with 'not in' at line 426
+------------------------------------------------------------
+--- original (line 426)
++++ mutant (line 426)
+-            "Cannot specify a FastAPI annotation in `Annotated` and `Depends` as a"
++            "Cannot specify a FastAPI annotation not in `Annotated` and `Depends` as a"
+
+------------------------------------------------------------
+Mutant #224 [IOD]
+Description: Replace 'in' with 'not in' at line 433
+------------------------------------------------------------
+--- original (line 433)
++++ mutant (line 433)
+-            "Cannot specify FastAPI annotations in `Annotated` and default value"
++            "Cannot specify FastAPI annotations not in `Annotated` and default value"
+
+------------------------------------------------------------
+Mutant #225 [IOD]
+Description: Replace 'in' with 'not in' at line 506
+------------------------------------------------------------
+--- original (line 506)
++++ mutant (line 506)
+-            required=field_info.default in (RequiredParam, Undefined),
++            required=field_info.default not in (RequiredParam, Undefined),
+
+------------------------------------------------------------
+Mutant #226 [IOD]
+Description: Replace 'in' with 'not in' at line 538
+------------------------------------------------------------
+--- original (line 538)
++++ mutant (line 538)
+-            f"non-body parameters must be in path, query, header or cookie: {field.name}"
++            f"non-body parameters must be not in path, query, header or cookie: {field.name}"
+
+------------------------------------------------------------
+Mutant #227 [IOD]
+Description: Replace 'in' with 'not in' at line 579
+------------------------------------------------------------
+--- original (line 579)
++++ mutant (line 579)
+-        "fastapi_inner_astack not found in request scope"
++        "fastapi_inner_astack not found not in request scope"
+
+------------------------------------------------------------
+Mutant #228 [IOD]
+Description: Replace 'in' with 'not in' at line 583
+------------------------------------------------------------
+--- original (line 583)
++++ mutant (line 583)
+-        "fastapi_function_astack not found in request scope"
++        "fastapi_function_astack not found not in request scope"
+
+------------------------------------------------------------
+Mutant #229 [IOD]
+Description: Replace 'in' with 'not in' at line 593
+------------------------------------------------------------
+--- original (line 593)
++++ mutant (line 593)
+-    for sub_dependant in dependant.dependencies:
++    for sub_dependant not in dependant.dependencies:
+
+------------------------------------------------------------
+Mutant #230 [IOD]
+Description: Replace 'in' with 'not in' at line 629
+------------------------------------------------------------
+--- original (line 629)
++++ mutant (line 629)
+-        if sub_dependant.use_cache and sub_dependant.cache_key in dependency_cache:
++        if sub_dependant.use_cache and sub_dependant.cache_key not in dependency_cache:
+
+------------------------------------------------------------
+Mutant #231 [IOD]
+Description: Replace 'not in' with 'in' at line 648
+------------------------------------------------------------
+--- original (line 648)
++++ mutant (line 648)
+-        if sub_dependant.cache_key not in dependency_cache:
++        if sub_dependant.cache_key in dependency_cache:
+
+------------------------------------------------------------
+Mutant #232 [IOD]
+Description: Replace 'in' with 'not in' at line 770
+------------------------------------------------------------
+--- original (line 770)
++++ mutant (line 770)
+-    for field in fields_to_extract:
++    for field not in fields_to_extract:
+
+------------------------------------------------------------
+Mutant #233 [IOD]
+Description: Replace 'in' with 'not in' at line 787
+------------------------------------------------------------
+--- original (line 787)
++++ mutant (line 787)
+-    for key in received_params.keys():
++    for key not in received_params.keys():
+
+------------------------------------------------------------
+Mutant #234 [IOD]
+Description: Replace 'not in' with 'in' at line 788
+------------------------------------------------------------
+--- original (line 788)
++++ mutant (line 788)
+-        if key not in processed_keys:
++        if key in processed_keys:
+
+------------------------------------------------------------
+Mutant #235 [IOD]
+Description: Replace 'in' with 'not in' at line 809
+------------------------------------------------------------
+--- original (line 809)
++++ mutant (line 809)
+-    for field in fields:
++    for field not in fields:
+
+------------------------------------------------------------
+Mutant #236 [IOD]
+Description: Replace 'in' with 'not in' at line 838
+------------------------------------------------------------
+--- original (line 838)
++++ mutant (line 838)
+-    for arg in union_args:
++    for arg not in union_args:
+
+------------------------------------------------------------
+Mutant #237 [IOD]
+Description: Replace 'in' with 'not in' at line 850
+------------------------------------------------------------
+--- original (line 850)
++++ mutant (line 850)
+-    body_param_names_set = {field.name for field in fields}
++    body_param_names_set = {field.name for field not in fields}
+
+------------------------------------------------------------
+Mutant #238 [IOD]
+Description: Replace 'in' with 'not in' at line 875
+------------------------------------------------------------
+--- original (line 875)
++++ mutant (line 875)
+-    for field in body_fields:
++    for field not in body_fields:
+
+------------------------------------------------------------
+Mutant #239 [IOD]
+Description: Replace 'in' with 'not in' at line 900
+------------------------------------------------------------
+--- original (line 900)
++++ mutant (line 900)
+-                for sub_value in value:
++                for sub_value not in value:
+
+------------------------------------------------------------
+Mutant #240 [IOD]
+Description: Replace 'in' with 'not in' at line 905
+------------------------------------------------------------
+--- original (line 905)
++++ mutant (line 905)
+-    field_aliases = {get_validation_alias(field) for field in body_fields}
++    field_aliases = {get_validation_alias(field) for field not in body_fields}
+
+------------------------------------------------------------
+Mutant #241 [IOD]
+Description: Replace 'in' with 'not in' at line 906
+------------------------------------------------------------
+--- original (line 906)
++++ mutant (line 906)
+-    for key in received_body.keys():
++    for key not in received_body.keys():
+
+------------------------------------------------------------
+Mutant #242 [IOD]
+Description: Replace 'not in' with 'in' at line 907
+------------------------------------------------------------
+--- original (line 907)
++++ mutant (line 907)
+-        if key not in field_aliases:
++        if key in field_aliases:
+
+------------------------------------------------------------
+Mutant #243 [IOD]
+Description: Replace 'in' with 'not in' at line 946
+------------------------------------------------------------
+--- original (line 946)
++++ mutant (line 946)
+-    for field in body_fields:
++    for field not in body_fields:
+
+------------------------------------------------------------
+Mutant #244 [IOD]
+Description: Replace 'in' with 'not in' at line 988
+------------------------------------------------------------
+--- original (line 988)
++++ mutant (line 988)
+-    required = any(True for f in flat_dependant.body_params if f.required)
++    required = any(True for f not in flat_dependant.body_params if f.required)
+
+------------------------------------------------------------
+Mutant #245 [IOD]
+Description: Replace 'in' with 'not in' at line 995
+------------------------------------------------------------
+--- original (line 995)
++++ mutant (line 995)
+-    if any(isinstance(f.field_info, params.File) for f in flat_dependant.body_params):
++    if any(isinstance(f.field_info, params.File) for f not in flat_dependant.body_params):
+
+------------------------------------------------------------
+Mutant #246 [IOD]
+Description: Replace 'in' with 'not in' at line 997
+------------------------------------------------------------
+--- original (line 997)
++++ mutant (line 997)
+-    elif any(isinstance(f.field_info, params.Form) for f in flat_dependant.body_params):
++    elif any(isinstance(f.field_info, params.Form) for f not in flat_dependant.body_params):
+
+------------------------------------------------------------
+Mutant #247 [IOD]
+Description: Replace 'in' with 'not in' at line 1004
+------------------------------------------------------------
+--- original (line 1004)
++++ mutant (line 1004)
+-            for f in flat_dependant.body_params
++            for f not in flat_dependant.body_params
+
+
+================================================================================
+OPERATOR: LCR - Logical Connector Replacement (and, or)
+Count: 47 mutants
+================================================================================
+
+------------------------------------------------------------
+Mutant #30 [LCR]
+Description: Replace 'and' with 'or' at line 117
+------------------------------------------------------------
+--- original (line 117)
++++ mutant (line 117)
+-    if isinstance(depends, params.Security) and depends.scopes:
++    if isinstance(depends, params.Security) or depends.scopes:
+
+------------------------------------------------------------
+Mutant #31 [LCR]
+Description: Replace 'or' with 'and' at line 137
+------------------------------------------------------------
+--- original (line 137)
++++ mutant (line 137)
+-    use_parent_oauth_scopes = (parent_oauth_scopes or []) + (
++    use_parent_oauth_scopes = (parent_oauth_scopes and []) + (
+
+------------------------------------------------------------
+Mutant #32 [LCR]
+Description: Replace 'or' with 'and' at line 138
+------------------------------------------------------------
+--- original (line 138)
++++ mutant (line 138)
+-        dependant.oauth_scopes or []
++        dependant.oauth_scopes and []
+
+------------------------------------------------------------
+Mutant #33 [LCR]
+Description: Replace 'and' with 'or' at line 162
+------------------------------------------------------------
+--- original (line 162)
++++ mutant (line 162)
+-        if skip_repeats and sub_dependant.cache_key in visited:
++        if skip_repeats or sub_dependant.cache_key in visited:
+
+------------------------------------------------------------
+Mutant #34 [LCR]
+Description: Replace 'and' with 'or' at line 185
+------------------------------------------------------------
+--- original (line 185)
++++ mutant (line 185)
+-    if len(fields) == 1 and lenient_issubclass(first_field.type_, BaseModel):
++    if len(fields) == 1 or lenient_issubclass(first_field.type_, BaseModel):
+
+------------------------------------------------------------
+Mutant #35 [LCR]
+Description: Replace 'or' with 'and' at line 270
+------------------------------------------------------------
+--- original (line 270)
++++ mutant (line 270)
+-    current_scopes = (parent_oauth_scopes or []) + (own_oauth_scopes or [])
++    current_scopes = (parent_oauth_scopes and []) + (own_oauth_scopes or [])
+
+------------------------------------------------------------
+Mutant #36 [LCR]
+Description: Replace 'or' with 'and' at line 285
+------------------------------------------------------------
+--- original (line 285)
++++ mutant (line 285)
+-                (dependant.is_gen_callable or dependant.is_async_gen_callable)
++                (dependant.is_gen_callable and dependant.is_async_gen_callable)
+
+------------------------------------------------------------
+Mutant #37 [LCR]
+Description: Replace 'and' with 'or' at line 286
+------------------------------------------------------------
+--- original (line 286)
++++ mutant (line 286)
+-                and dependant.computed_scope == "request"
++                or dependant.computed_scope == "request"
+
+------------------------------------------------------------
+Mutant #38 [LCR]
+Description: Replace 'and' with 'or' at line 287
+------------------------------------------------------------
+--- original (line 287)
++++ mutant (line 287)
+-                and param_details.depends.scope == "function"
++                or param_details.depends.scope == "function"
+
+------------------------------------------------------------
+Mutant #39 [LCR]
+Description: Replace 'or' with 'and' at line 406
+------------------------------------------------------------
+--- original (line 406)
++++ mutant (line 406)
+-                field_info.default == Undefined or field_info.default == RequiredParam
++                field_info.default == Undefined and field_info.default == RequiredParam
+
+------------------------------------------------------------
+Mutant #41 [LCR]
+Description: Replace 'and' with 'or' at line 426
+------------------------------------------------------------
+--- original (line 426)
++++ mutant (line 426)
+-            "Cannot specify a FastAPI annotation in `Annotated` and `Depends` as a"
++            "Cannot specify a FastAPI annotation in `Annotated` or `Depends` as a"
+
+------------------------------------------------------------
+Mutant #42 [LCR]
+Description: Replace 'and' with 'or' at line 433
+------------------------------------------------------------
+--- original (line 433)
++++ mutant (line 433)
+-            "Cannot specify FastAPI annotations in `Annotated` and default value"
++            "Cannot specify FastAPI annotations in `Annotated` or default value"
+
+------------------------------------------------------------
+Mutant #43 [LCR]
+Description: Replace 'and' with 'or' at line 441
+------------------------------------------------------------
+--- original (line 441)
++++ mutant (line 441)
+-    if depends is not None and depends.dependency is None:
++    if depends is not None or depends.dependency is None:
+
+------------------------------------------------------------
+Mutant #44 [LCR]
+Description: Replace 'and' with 'or' at line 463
+------------------------------------------------------------
+--- original (line 463)
++++ mutant (line 463)
+-    elif field_info is None and depends is None:
++    elif field_info is None or depends is None:
+
+------------------------------------------------------------
+Mutant #45 [LCR]
+Description: Replace 'or' with 'and' at line 472
+------------------------------------------------------------
+--- original (line 472)
++++ mutant (line 472)
+-        ) or is_uploadfile_sequence_annotation(type_annotation):
++        ) and is_uploadfile_sequence_annotation(type_annotation):
+
+------------------------------------------------------------
+Mutant #46 [LCR]
+Description: Replace 'and' with 'or' at line 490
+------------------------------------------------------------
+--- original (line 490)
++++ mutant (line 490)
+-            and getattr(field_info, "in_", None) is None
++            or getattr(field_info, "in_", None) is None
+
+------------------------------------------------------------
+Mutant #47 [LCR]
+Description: Replace 'and' with 'or' at line 496
+------------------------------------------------------------
+--- original (line 496)
++++ mutant (line 496)
+-        if not field_info.alias and getattr(field_info, "convert_underscores", None):
++        if not field_info.alias or getattr(field_info, "convert_underscores", None):
+
+------------------------------------------------------------
+Mutant #48 [LCR]
+Description: Replace 'or' with 'and' at line 499
+------------------------------------------------------------
+--- original (line 499)
++++ mutant (line 499)
+-            alias = field_info.alias or param_name
++            alias = field_info.alias and param_name
+
+------------------------------------------------------------
+Mutant #49 [LCR]
+Description: Replace 'or' with 'and' at line 516
+------------------------------------------------------------
+--- original (line 516)
++++ mutant (line 516)
+-                or is_scalar_sequence_field(field)
++                and is_scalar_sequence_field(field)
+
+------------------------------------------------------------
+Mutant #50 [LCR]
+Description: Replace 'or' with 'and' at line 517
+------------------------------------------------------------
+--- original (line 517)
++++ mutant (line 517)
+-                or (
++                and (
+
+------------------------------------------------------------
+Mutant #51 [LCR]
+Description: Replace 'and' with 'or' at line 520
+------------------------------------------------------------
+--- original (line 520)
++++ mutant (line 520)
+-                    and getattr(field, "shape", 1) == 1
++                    or getattr(field, "shape", 1) == 1
+
+------------------------------------------------------------
+Mutant #53 [LCR]
+Description: Replace 'and' with 'or' at line 599
+------------------------------------------------------------
+--- original (line 599)
++++ mutant (line 599)
+-            and dependency_overrides_provider.dependency_overrides
++            or dependency_overrides_provider.dependency_overrides
+
+------------------------------------------------------------
+Mutant #54 [LCR]
+Description: Replace 'and' with 'or' at line 629
+------------------------------------------------------------
+--- original (line 629)
++++ mutant (line 629)
+-        if sub_dependant.use_cache and sub_dependant.cache_key in dependency_cache:
++        if sub_dependant.use_cache or sub_dependant.cache_key in dependency_cache:
+
+------------------------------------------------------------
+Mutant #55 [LCR]
+Description: Replace 'or' with 'and' at line 632
+------------------------------------------------------------
+--- original (line 632)
++++ mutant (line 632)
+-            use_sub_dependant.is_gen_callable or use_sub_dependant.is_async_gen_callable
++            use_sub_dependant.is_gen_callable and use_sub_dependant.is_async_gen_callable
+
+------------------------------------------------------------
+Mutant #56 [LCR]
+Description: Replace 'and' with 'or' at line 680
+------------------------------------------------------------
+--- original (line 680)
++++ mutant (line 680)
+-    if dependant.request_param_name and isinstance(request, Request):
++    if dependant.request_param_name or isinstance(request, Request):
+
+------------------------------------------------------------
+Mutant #57 [LCR]
+Description: Replace 'and' with 'or' at line 682
+------------------------------------------------------------
+--- original (line 682)
++++ mutant (line 682)
+-    elif dependant.websocket_param_name and isinstance(request, WebSocket):
++    elif dependant.websocket_param_name or isinstance(request, WebSocket):
+
+------------------------------------------------------------
+Mutant #58 [LCR]
+Description: Replace 'or' with 'and' at line 722
+------------------------------------------------------------
+--- original (line 722)
++++ mutant (line 722)
+-    alias = alias or get_validation_alias(field)
++    alias = alias and get_validation_alias(field)
+
+------------------------------------------------------------
+Mutant #59 [LCR]
+Description: Replace 'and' with 'or' at line 723
+------------------------------------------------------------
+--- original (line 723)
++++ mutant (line 723)
+-    if is_sequence_field(field) and isinstance(values, (ImmutableMultiDict, Headers)):
++    if is_sequence_field(field) or isinstance(values, (ImmutableMultiDict, Headers)):
+
+------------------------------------------------------------
+Mutant #60 [LCR]
+Description: Replace 'or' with 'and' at line 729
+------------------------------------------------------------
+--- original (line 729)
++++ mutant (line 729)
+-        or (
++        and (
+
+------------------------------------------------------------
+Mutant #61 [LCR]
+Description: Replace 'and' with 'or' at line 731
+------------------------------------------------------------
+--- original (line 731)
++++ mutant (line 731)
+-            and isinstance(value, str)  # For type checks
++            or isinstance(value, str)  # For type checks
+
+------------------------------------------------------------
+Mutant #62 [LCR]
+Description: Replace 'and' with 'or' at line 732
+------------------------------------------------------------
+--- original (line 732)
++++ mutant (line 732)
+-            and value == ""
++            or value == ""
+
+------------------------------------------------------------
+Mutant #63 [LCR]
+Description: Replace 'and' with 'or' at line 734
+------------------------------------------------------------
+--- original (line 734)
++++ mutant (line 734)
+-        or (is_sequence_field(field) and len(value) == 0)
++        or (is_sequence_field(field) or len(value) == 0)
+
+------------------------------------------------------------
+Mutant #64 [LCR]
+Description: Replace 'or' with 'and' at line 734
+------------------------------------------------------------
+--- original (line 734)
++++ mutant (line 734)
+-        or (is_sequence_field(field) and len(value) == 0)
++        and (is_sequence_field(field) and len(value) == 0)
+
+------------------------------------------------------------
+Mutant #65 [LCR]
+Description: Replace 'and' with 'or' at line 757
+------------------------------------------------------------
+--- original (line 757)
++++ mutant (line 757)
+-    if len(fields) == 1 and lenient_issubclass(first_field.type_, BaseModel):
++    if len(fields) == 1 or lenient_issubclass(first_field.type_, BaseModel):
+
+------------------------------------------------------------
+Mutant #66 [LCR]
+Description: Replace 'or' with 'and' at line 785
+------------------------------------------------------------
+--- original (line 785)
++++ mutant (line 785)
+-        processed_keys.add(alias or get_validation_alias(field))
++        processed_keys.add(alias and get_validation_alias(field))
+
+------------------------------------------------------------
+Mutant #67 [LCR]
+Description: Replace 'and' with 'or' at line 791
+------------------------------------------------------------
+--- original (line 791)
++++ mutant (line 791)
+-                if isinstance(value, list) and (len(value) == 1):
++                if isinstance(value, list) or (len(value) == 1):
+
+------------------------------------------------------------
+Mutant #68 [LCR]
+Description: Replace 'and' with 'or' at line 833
+------------------------------------------------------------
+--- original (line 833)
++++ mutant (line 833)
+-    if origin is not Union and origin is not UnionType:
++    if origin is not Union or origin is not UnionType:
+
+------------------------------------------------------------
+Mutant #69 [LCR]
+Description: Replace 'and' with 'or' at line 862
+------------------------------------------------------------
+--- original (line 862)
++++ mutant (line 862)
+-        and not lenient_issubclass(first_field.type_, BaseModel)
++        or not lenient_issubclass(first_field.type_, BaseModel)
+
+------------------------------------------------------------
+Mutant #70 [LCR]
+Description: Replace 'and' with 'or' at line 863
+------------------------------------------------------------
+--- original (line 863)
++++ mutant (line 863)
+-        and not is_union_of_base_models(first_field.type_)
++        or not is_union_of_base_models(first_field.type_)
+
+------------------------------------------------------------
+Mutant #71 [LCR]
+Description: Replace 'and' with 'or' at line 880
+------------------------------------------------------------
+--- original (line 880)
++++ mutant (line 880)
+-            and is_bytes_field(field)
++            or is_bytes_field(field)
+
+------------------------------------------------------------
+Mutant #72 [LCR]
+Description: Replace 'and' with 'or' at line 881
+------------------------------------------------------------
+--- original (line 881)
++++ mutant (line 881)
+-            and isinstance(value, UploadFile)
++            or isinstance(value, UploadFile)
+
+------------------------------------------------------------
+Mutant #73 [LCR]
+Description: Replace 'and' with 'or' at line 886
+------------------------------------------------------------
+--- original (line 886)
++++ mutant (line 886)
+-            and isinstance(field_info, params.File)
++            or isinstance(field_info, params.File)
+
+------------------------------------------------------------
+Mutant #74 [LCR]
+Description: Replace 'and' with 'or' at line 887
+------------------------------------------------------------
+--- original (line 887)
++++ mutant (line 887)
+-            and value_is_sequence(value)
++            or value_is_sequence(value)
+
+------------------------------------------------------------
+Mutant #75 [LCR]
+Description: Replace 'and' with 'or' at line 924
+------------------------------------------------------------
+--- original (line 924)
++++ mutant (line 924)
+-    single_not_embedded_field = len(body_fields) == 1 and not embed_body_fields
++    single_not_embedded_field = len(body_fields) == 1 or not embed_body_fields
+
+------------------------------------------------------------
+Mutant #76 [LCR]
+Description: Replace 'and' with 'or' at line 932
+------------------------------------------------------------
+--- original (line 932)
++++ mutant (line 932)
+-        and lenient_issubclass(first_field.type_, BaseModel)
++        or lenient_issubclass(first_field.type_, BaseModel)
+
+------------------------------------------------------------
+Mutant #77 [LCR]
+Description: Replace 'and' with 'or' at line 933
+------------------------------------------------------------
+--- original (line 933)
++++ mutant (line 933)
+-        and isinstance(received_body, FormData)
++        or isinstance(received_body, FormData)
+
+------------------------------------------------------------
+Mutant #80 [LCR]
+Description: Replace 'or' with 'and' at line 1021
+------------------------------------------------------------
+--- original (line 1021)
++++ mutant (line 1021)
+-    return va or field.alias
++    return va and field.alias
+
+
+================================================================================
+OPERATOR: RIL - Return Statement Mutation
+Count: 55 mutants
+================================================================================
+
+------------------------------------------------------------
+Mutant #153 [RIL]
+Description: Replace return value with None at line 119
+------------------------------------------------------------
+--- original (line 119)
++++ mutant (line 119)
+-    return get_dependant(
++    return None
+
+------------------------------------------------------------
+Mutant #154 [RIL]
+Description: Replace return value with None at line 178
+------------------------------------------------------------
+--- original (line 178)
++++ mutant (line 178)
+-    return flat_dependant
++    return None
+
+------------------------------------------------------------
+Mutant #155 [RIL]
+Description: Replace return value with None at line 183
+------------------------------------------------------------
+--- original (line 183)
++++ mutant (line 183)
+-        return fields
++        return None
+
+------------------------------------------------------------
+Mutant #156 [RIL]
+Description: Replace return value with None at line 187
+------------------------------------------------------------
+--- original (line 187)
++++ mutant (line 187)
+-        return fields_to_extract
++        return None
+
+------------------------------------------------------------
+Mutant #157 [RIL]
+Description: Replace return value with None at line 188
+------------------------------------------------------------
+--- original (line 188)
++++ mutant (line 188)
+-    return fields
++    return None
+
+------------------------------------------------------------
+Mutant #158 [RIL]
+Description: Replace return value with None at line 197
+------------------------------------------------------------
+--- original (line 197)
++++ mutant (line 197)
+-    return path_params + query_params + header_params + cookie_params
++    return None
+
+------------------------------------------------------------
+Mutant #159 [RIL]
+Description: Replace return value with None at line 210
+------------------------------------------------------------
+--- original (line 210)
++++ mutant (line 210)
+-    return signature
++    return None
+
+------------------------------------------------------------
+Mutant #160 [RIL]
+Description: Replace return value with None at line 227
+------------------------------------------------------------
+--- original (line 227)
++++ mutant (line 227)
+-    return typed_signature
++    return None
+
+------------------------------------------------------------
+Mutant #161 [RIL]
+Description: Replace return value with None at line 236
+------------------------------------------------------------
+--- original (line 236)
++++ mutant (line 236)
+-    return annotation
++    return None
+
+------------------------------------------------------------
+Mutant #162 [RIL]
+Description: Replace return value with None at line 248
+------------------------------------------------------------
+--- original (line 248)
++++ mutant (line 248)
+-    return get_typed_annotation(annotation, globalns)
++    return None
+
+------------------------------------------------------------
+Mutant #163 [RIL]
+Description: Replace return value with None at line 323
+------------------------------------------------------------
+--- original (line 323)
++++ mutant (line 323)
+-    return dependant
++    return None
+
+------------------------------------------------------------
+Mutant #164 [RIL]
+Description: Replace return value with None at line 331
+------------------------------------------------------------
+--- original (line 331)
++++ mutant (line 331)
+-        return True
++        return None
+
+------------------------------------------------------------
+Mutant #165 [RIL]
+Description: Replace return value with False at line 331
+------------------------------------------------------------
+--- original (line 331)
++++ mutant (line 331)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #166 [RIL]
+Description: Replace return value with None at line 334
+------------------------------------------------------------
+--- original (line 334)
++++ mutant (line 334)
+-        return True
++        return None
+
+------------------------------------------------------------
+Mutant #167 [RIL]
+Description: Replace return value with False at line 334
+------------------------------------------------------------
+--- original (line 334)
++++ mutant (line 334)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #168 [RIL]
+Description: Replace return value with None at line 337
+------------------------------------------------------------
+--- original (line 337)
++++ mutant (line 337)
+-        return True
++        return None
+
+------------------------------------------------------------
+Mutant #169 [RIL]
+Description: Replace return value with False at line 337
+------------------------------------------------------------
+--- original (line 337)
++++ mutant (line 337)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #170 [RIL]
+Description: Replace return value with None at line 340
+------------------------------------------------------------
+--- original (line 340)
++++ mutant (line 340)
+-        return True
++        return None
+
+------------------------------------------------------------
+Mutant #171 [RIL]
+Description: Replace return value with False at line 340
+------------------------------------------------------------
+--- original (line 340)
++++ mutant (line 340)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #172 [RIL]
+Description: Replace return value with None at line 343
+------------------------------------------------------------
+--- original (line 343)
++++ mutant (line 343)
+-        return True
++        return None
+
+------------------------------------------------------------
+Mutant #173 [RIL]
+Description: Replace return value with False at line 343
+------------------------------------------------------------
+--- original (line 343)
++++ mutant (line 343)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #174 [RIL]
+Description: Replace return value with None at line 346
+------------------------------------------------------------
+--- original (line 346)
++++ mutant (line 346)
+-        return True
++        return None
+
+------------------------------------------------------------
+Mutant #175 [RIL]
+Description: Replace return value with False at line 346
+------------------------------------------------------------
+--- original (line 346)
++++ mutant (line 346)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #176 [RIL]
+Description: Replace return value with None at line 524
+------------------------------------------------------------
+--- original (line 524)
++++ mutant (line 524)
+-    return ParamDetails(type_annotation=type_annotation, depends=depends, field=field)
++    return None
+
+------------------------------------------------------------
+Mutant #177 [RIL]
+Description: Replace return value with None at line 551
+------------------------------------------------------------
+--- original (line 551)
++++ mutant (line 551)
+-    return await stack.enter_async_context(cm)
++    return None
+
+------------------------------------------------------------
+Mutant #178 [RIL]
+Description: Replace return value with None at line 694
+------------------------------------------------------------
+--- original (line 694)
++++ mutant (line 694)
+-    return SolvedDependency(
++    return None
+
+------------------------------------------------------------
+Mutant #179 [RIL]
+Description: Replace return value with None at line 710
+------------------------------------------------------------
+--- original (line 710)
++++ mutant (line 710)
+-            return deepcopy(field.default), []
++            return None
+
+------------------------------------------------------------
+Mutant #180 [RIL]
+Description: Replace return value with None at line 716
+------------------------------------------------------------
+--- original (line 716)
++++ mutant (line 716)
+-        return v_, []
++        return None
+
+------------------------------------------------------------
+Mutant #181 [RIL]
+Description: Replace return value with None at line 739
+------------------------------------------------------------
+--- original (line 739)
++++ mutant (line 739)
+-            return deepcopy(field.default)
++            return None
+
+------------------------------------------------------------
+Mutant #182 [RIL]
+Description: Replace return value with None at line 740
+------------------------------------------------------------
+--- original (line 740)
++++ mutant (line 740)
+-    return value
++    return None
+
+------------------------------------------------------------
+Mutant #183 [RIL]
+Description: Replace return value with None at line 751
+------------------------------------------------------------
+--- original (line 751)
++++ mutant (line 751)
+-        return values, errors
++        return None
+
+------------------------------------------------------------
+Mutant #184 [RIL]
+Description: Replace return value with None at line 807
+------------------------------------------------------------
+--- original (line 807)
++++ mutant (line 807)
+-        return {first_field.name: v_}, errors_
++        return None
+
+------------------------------------------------------------
+Mutant #185 [RIL]
+Description: Replace return value with None at line 823
+------------------------------------------------------------
+--- original (line 823)
++++ mutant (line 823)
+-    return values, errors
++    return None
+
+------------------------------------------------------------
+Mutant #186 [RIL]
+Description: Replace return value with None at line 834
+------------------------------------------------------------
+--- original (line 834)
++++ mutant (line 834)
+-        return False
++        return None
+
+------------------------------------------------------------
+Mutant #187 [RIL]
+Description: Replace return value with False at line 834
+------------------------------------------------------------
+--- original (line 834)
++++ mutant (line 834)
+-        return False
++        return False
+
+------------------------------------------------------------
+Mutant #188 [RIL]
+Description: Replace return value with None at line 840
+------------------------------------------------------------
+--- original (line 840)
++++ mutant (line 840)
+-            return False
++            return None
+
+------------------------------------------------------------
+Mutant #189 [RIL]
+Description: Replace return value with False at line 840
+------------------------------------------------------------
+--- original (line 840)
++++ mutant (line 840)
+-            return False
++            return False
+
+------------------------------------------------------------
+Mutant #190 [RIL]
+Description: Replace return value with None at line 842
+------------------------------------------------------------
+--- original (line 842)
++++ mutant (line 842)
+-    return True
++    return None
+
+------------------------------------------------------------
+Mutant #191 [RIL]
+Description: Replace return value with False at line 842
+------------------------------------------------------------
+--- original (line 842)
++++ mutant (line 842)
+-    return True
++    return False
+
+------------------------------------------------------------
+Mutant #192 [RIL]
+Description: Replace return value with None at line 847
+------------------------------------------------------------
+--- original (line 847)
++++ mutant (line 847)
+-        return False
++        return None
+
+------------------------------------------------------------
+Mutant #193 [RIL]
+Description: Replace return value with False at line 847
+------------------------------------------------------------
+--- original (line 847)
++++ mutant (line 847)
+-        return False
++        return False
+
+------------------------------------------------------------
+Mutant #194 [RIL]
+Description: Replace return value with None at line 853
+------------------------------------------------------------
+--- original (line 853)
++++ mutant (line 853)
+-        return True
++        return None
+
+------------------------------------------------------------
+Mutant #195 [RIL]
+Description: Replace return value with False at line 853
+------------------------------------------------------------
+--- original (line 853)
++++ mutant (line 853)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #196 [RIL]
+Description: Replace return value with None at line 857
+------------------------------------------------------------
+--- original (line 857)
++++ mutant (line 857)
+-        return True
++        return None
+
+------------------------------------------------------------
+Mutant #197 [RIL]
+Description: Replace return value with False at line 857
+------------------------------------------------------------
+--- original (line 857)
++++ mutant (line 857)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #198 [RIL]
+Description: Replace return value with None at line 865
+------------------------------------------------------------
+--- original (line 865)
++++ mutant (line 865)
+-        return True
++        return None
+
+------------------------------------------------------------
+Mutant #199 [RIL]
+Description: Replace return value with False at line 865
+------------------------------------------------------------
+--- original (line 865)
++++ mutant (line 865)
+-        return True
++        return False
+
+------------------------------------------------------------
+Mutant #200 [RIL]
+Description: Replace return value with None at line 866
+------------------------------------------------------------
+--- original (line 866)
++++ mutant (line 866)
+-    return False
++    return None
+
+------------------------------------------------------------
+Mutant #201 [RIL]
+Description: Replace return value with False at line 866
+------------------------------------------------------------
+--- original (line 866)
++++ mutant (line 866)
+-    return False
++    return False
+
+------------------------------------------------------------
+Mutant #202 [RIL]
+Description: Replace return value with None at line 913
+------------------------------------------------------------
+--- original (line 913)
++++ mutant (line 913)
+-    return values
++    return None
+
+------------------------------------------------------------
+Mutant #203 [RIL]
+Description: Replace return value with None at line 945
+------------------------------------------------------------
+--- original (line 945)
++++ mutant (line 945)
+-        return {first_field.name: v_}, errors_
++        return None
+
+------------------------------------------------------------
+Mutant #204 [RIL]
+Description: Replace return value with None at line 963
+------------------------------------------------------------
+--- original (line 963)
++++ mutant (line 963)
+-    return values, errors
++    return None
+
+------------------------------------------------------------
+Mutant #205 [RIL]
+Description: Replace return value with None at line 983
+------------------------------------------------------------
+--- original (line 983)
++++ mutant (line 983)
+-        return first_param
++        return None
+
+------------------------------------------------------------
+Mutant #206 [RIL]
+Description: Replace return value with None at line 1016
+------------------------------------------------------------
+--- original (line 1016)
++++ mutant (line 1016)
+-    return final_field
++    return None
+
+------------------------------------------------------------
+Mutant #207 [RIL]
+Description: Replace return value with None at line 1021
+------------------------------------------------------------
+--- original (line 1021)
++++ mutant (line 1021)
+-    return va or field.alias
++    return None
+
+
+================================================================================
+OPERATOR: ROR - Relational Operator Replacement (==, !=, <, >, <=, >=)
+Count: 21 mutants
+================================================================================
+
+------------------------------------------------------------
+Mutant #9 [ROR]
+Description: Replace '>' with '<' at line 90
+------------------------------------------------------------
+--- original (line 90)
++++ mutant (line 90)
+-        assert __version__ > "0.0.12"
++        assert __version__ < "0.0.12"
+
+------------------------------------------------------------
+Mutant #10 [ROR]
+Description: Replace '==' with '!=' at line 185
+------------------------------------------------------------
+--- original (line 185)
++++ mutant (line 185)
+-    if len(fields) == 1 and lenient_issubclass(first_field.type_, BaseModel):
++    if len(fields) != 1 and lenient_issubclass(first_field.type_, BaseModel):
+
+------------------------------------------------------------
+Mutant #11 [ROR]
+Description: Replace '>=' with '<=' at line 201
+------------------------------------------------------------
+--- original (line 201)
++++ mutant (line 201)
+-    if sys.version_info >= (3, 10):
++    if sys.version_info <= (3, 10):
+
+------------------------------------------------------------
+Mutant #12 [ROR]
+Description: Replace '==' with '!=' at line 286
+------------------------------------------------------------
+--- original (line 286)
++++ mutant (line 286)
+-                and dependant.computed_scope == "request"
++                and dependant.computed_scope != "request"
+
+------------------------------------------------------------
+Mutant #13 [ROR]
+Description: Replace '==' with '!=' at line 287
+------------------------------------------------------------
+--- original (line 287)
++++ mutant (line 287)
+-                and param_details.depends.scope == "function"
++                and param_details.depends.scope != "function"
+
+------------------------------------------------------------
+Mutant #14 [ROR]
+Description: Replace '==' with '!=' at line 406
+------------------------------------------------------------
+--- original (line 406)
++++ mutant (line 406)
+-                field_info.default == Undefined or field_info.default == RequiredParam
++                field_info.default != Undefined or field_info.default == RequiredParam
+
+------------------------------------------------------------
+Mutant #15 [ROR]
+Description: Replace '==' with '!=' at line 520
+------------------------------------------------------------
+--- original (line 520)
++++ mutant (line 520)
+-                    and getattr(field, "shape", 1) == 1
++                    and getattr(field, "shape", 1) != 1
+
+------------------------------------------------------------
+Mutant #16 [ROR]
+Description: Replace '==' with '!=' at line 530
+------------------------------------------------------------
+--- original (line 530)
++++ mutant (line 530)
+-    if field_info_in == params.ParamTypes.path:
++    if field_info_in != params.ParamTypes.path:
+
+------------------------------------------------------------
+Mutant #17 [ROR]
+Description: Replace '==' with '!=' at line 532
+------------------------------------------------------------
+--- original (line 532)
++++ mutant (line 532)
+-    elif field_info_in == params.ParamTypes.query:
++    elif field_info_in != params.ParamTypes.query:
+
+------------------------------------------------------------
+Mutant #18 [ROR]
+Description: Replace '==' with '!=' at line 534
+------------------------------------------------------------
+--- original (line 534)
++++ mutant (line 534)
+-    elif field_info_in == params.ParamTypes.header:
++    elif field_info_in != params.ParamTypes.header:
+
+------------------------------------------------------------
+Mutant #19 [ROR]
+Description: Replace '==' with '!=' at line 537
+------------------------------------------------------------
+--- original (line 537)
++++ mutant (line 537)
+-        assert field_info_in == params.ParamTypes.cookie, (
++        assert field_info_in != params.ParamTypes.cookie, (
+
+------------------------------------------------------------
+Mutant #20 [ROR]
+Description: Replace '==' with '!=' at line 635
+------------------------------------------------------------
+--- original (line 635)
++++ mutant (line 635)
+-            if sub_dependant.scope == "function":
++            if sub_dependant.scope != "function":
+
+------------------------------------------------------------
+Mutant #21 [ROR]
+Description: Replace '==' with '!=' at line 732
+------------------------------------------------------------
+--- original (line 732)
++++ mutant (line 732)
+-            and value == ""
++            and value != ""
+
+------------------------------------------------------------
+Mutant #22 [ROR]
+Description: Replace '==' with '!=' at line 734
+------------------------------------------------------------
+--- original (line 734)
++++ mutant (line 734)
+-        or (is_sequence_field(field) and len(value) == 0)
++        or (is_sequence_field(field) and len(value) != 0)
+
+------------------------------------------------------------
+Mutant #23 [ROR]
+Description: Replace '==' with '!=' at line 757
+------------------------------------------------------------
+--- original (line 757)
++++ mutant (line 757)
+-    if len(fields) == 1 and lenient_issubclass(first_field.type_, BaseModel):
++    if len(fields) != 1 and lenient_issubclass(first_field.type_, BaseModel):
+
+------------------------------------------------------------
+Mutant #24 [ROR]
+Description: Replace '==' with '!=' at line 780
+------------------------------------------------------------
+--- original (line 780)
++++ mutant (line 780)
+-                if alias == field.name:
++                if alias != field.name:
+
+------------------------------------------------------------
+Mutant #25 [ROR]
+Description: Replace '==' with '!=' at line 791
+------------------------------------------------------------
+--- original (line 791)
++++ mutant (line 791)
+-                if isinstance(value, list) and (len(value) == 1):
++                if isinstance(value, list) and (len(value) != 1):
+
+------------------------------------------------------------
+Mutant #26 [ROR]
+Description: Replace '>' with '<' at line 852
+------------------------------------------------------------
+--- original (line 852)
++++ mutant (line 852)
+-    if len(body_param_names_set) > 1:
++    if len(body_param_names_set) < 1:
+
+------------------------------------------------------------
+Mutant #27 [ROR]
+Description: Replace '==' with '!=' at line 909
+------------------------------------------------------------
+--- original (line 909)
++++ mutant (line 909)
+-            if len(param_values) == 1:
++            if len(param_values) != 1:
+
+------------------------------------------------------------
+Mutant #28 [ROR]
+Description: Replace '==' with '!=' at line 924
+------------------------------------------------------------
+--- original (line 924)
++++ mutant (line 924)
+-    single_not_embedded_field = len(body_fields) == 1 and not embed_body_fields
++    single_not_embedded_field = len(body_fields) != 1 and not embed_body_fields
+
+------------------------------------------------------------
+Mutant #29 [ROR]
+Description: Replace '==' with '!=' at line 1007
+------------------------------------------------------------
+--- original (line 1007)
++++ mutant (line 1007)
+-        if len(set(body_param_media_types)) == 1:
++        if len(set(body_param_media_types)) != 1:
+
+
+================================================================================
+OPERATOR: STR - String Mutation
+Count: 4 mutants
+================================================================================
+
+------------------------------------------------------------
+Mutant #208 [STR]
+Description: Replace string with empty string at line 286
+------------------------------------------------------------
+--- original (line 286)
++++ mutant (line 286)
+-                and dependant.computed_scope == "request"
++                and dependant.computed_scope == ""
+
+------------------------------------------------------------
+Mutant #209 [STR]
+Description: Replace string with empty string at line 287
+------------------------------------------------------------
+--- original (line 287)
++++ mutant (line 287)
+-                and param_details.depends.scope == "function"
++                and param_details.depends.scope == ""
+
+------------------------------------------------------------
+Mutant #210 [STR]
+Description: Replace string with empty string at line 635
+------------------------------------------------------------
+--- original (line 635)
++++ mutant (line 635)
+-            if sub_dependant.scope == "function":
++            if sub_dependant.scope == "":
+
+------------------------------------------------------------
+Mutant #211 [STR]
+Description: Replace string with empty string at line 984
+------------------------------------------------------------
+--- original (line 984)
++++ mutant (line 984)
+-    model_name = "Body_" + name
++    model_name = "" + name
+
+
+================================================================================
+OPERATOR: UOI - Unary Operator Insertion (not)
+Count: 47 mutants
+================================================================================
+
+------------------------------------------------------------
+Mutant #106 [UOI]
+Description: Insert 'not' operator in condition at line 117
+------------------------------------------------------------
+--- original (line 117)
++++ mutant (line 117)
+-    if isinstance(depends, params.Security) and depends.scopes:
++    if not (isinstance(depends, params.Security) and depends.scopes):
+
+------------------------------------------------------------
+Mutant #107 [UOI]
+Description: Insert 'not' operator in condition at line 134
+------------------------------------------------------------
+--- original (line 134)
++++ mutant (line 134)
+-    if visited is None:
++    if not (visited is None):
+
+------------------------------------------------------------
+Mutant #108 [UOI]
+Description: Insert 'not' operator in condition at line 162
+------------------------------------------------------------
+--- original (line 162)
++++ mutant (line 162)
+-        if skip_repeats and sub_dependant.cache_key in visited:
++        if not (skip_repeats and sub_dependant.cache_key in visited):
+
+------------------------------------------------------------
+Mutant #109 [UOI]
+Description: Insert 'not' operator in condition at line 185
+------------------------------------------------------------
+--- original (line 185)
++++ mutant (line 185)
+-    if len(fields) == 1 and lenient_issubclass(first_field.type_, BaseModel):
++    if not (len(fields) == 1 and lenient_issubclass(first_field.type_, BaseModel)):
+
+------------------------------------------------------------
+Mutant #110 [UOI]
+Description: Insert 'not' operator in condition at line 201
+------------------------------------------------------------
+--- original (line 201)
++++ mutant (line 201)
+-    if sys.version_info >= (3, 10):
++    if not (sys.version_info >= (3, 10)):
+
+------------------------------------------------------------
+Mutant #111 [UOI]
+Description: Insert 'not' operator in condition at line 295
+------------------------------------------------------------
+--- original (line 295)
++++ mutant (line 295)
+-            if isinstance(param_details.depends, params.Security):
++            if not (isinstance(param_details.depends, params.Security)):
+
+------------------------------------------------------------
+Mutant #112 [UOI]
+Description: Insert 'not' operator in condition at line 296
+------------------------------------------------------------
+--- original (line 296)
++++ mutant (line 296)
+-                if param_details.depends.scopes:
++                if not (param_details.depends.scopes):
+
+------------------------------------------------------------
+Mutant #113 [UOI]
+Description: Insert 'not' operator in condition at line 319
+------------------------------------------------------------
+--- original (line 319)
++++ mutant (line 319)
+-        if isinstance(param_details.field.field_info, params.Body):
++        if not (isinstance(param_details.field.field_info, params.Body)):
+
+------------------------------------------------------------
+Mutant #114 [UOI]
+Description: Insert 'not' operator in condition at line 420
+------------------------------------------------------------
+--- original (line 420)
++++ mutant (line 420)
+-    if isinstance(value, params.Depends):
++    if not (isinstance(value, params.Depends)):
+
+------------------------------------------------------------
+Mutant #115 [UOI]
+Description: Insert 'not' operator in condition at line 437
+------------------------------------------------------------
+--- original (line 437)
++++ mutant (line 437)
+-        if isinstance(field_info, FieldInfo):
++        if not (isinstance(field_info, FieldInfo)):
+
+------------------------------------------------------------
+Mutant #116 [UOI]
+Description: Insert 'not' operator in condition at line 465
+------------------------------------------------------------
+--- original (line 465)
++++ mutant (line 465)
+-        if is_path_param:
++        if not (is_path_param):
+
+------------------------------------------------------------
+Mutant #117 [UOI]
+Description: Insert 'not' operator in condition at line 483
+------------------------------------------------------------
+--- original (line 483)
++++ mutant (line 483)
+-        if is_path_param:
++        if not (is_path_param):
+
+------------------------------------------------------------
+Mutant #118 [UOI]
+Description: Insert 'not' operator in condition at line 494
+------------------------------------------------------------
+--- original (line 494)
++++ mutant (line 494)
+-        if isinstance(field_info, params.Form):
++        if not (isinstance(field_info, params.Form)):
+
+------------------------------------------------------------
+Mutant #119 [UOI]
+Description: Insert 'not' operator in condition at line 509
+------------------------------------------------------------
+--- original (line 509)
++++ mutant (line 509)
+-        if is_path_param:
++        if not (is_path_param):
+
+------------------------------------------------------------
+Mutant #120 [UOI]
+Description: Insert 'not' operator in condition at line 530
+------------------------------------------------------------
+--- original (line 530)
++++ mutant (line 530)
+-    if field_info_in == params.ParamTypes.path:
++    if not (field_info_in == params.ParamTypes.path):
+
+------------------------------------------------------------
+Mutant #121 [UOI]
+Description: Insert 'not' operator in condition at line 547
+------------------------------------------------------------
+--- original (line 547)
++++ mutant (line 547)
+-    if dependant.is_async_gen_callable:
++    if not (dependant.is_async_gen_callable):
+
+------------------------------------------------------------
+Mutant #122 [UOI]
+Description: Insert 'not' operator in condition at line 587
+------------------------------------------------------------
+--- original (line 587)
++++ mutant (line 587)
+-    if response is None:
++    if not (response is None):
+
+------------------------------------------------------------
+Mutant #123 [UOI]
+Description: Insert 'not' operator in condition at line 591
+------------------------------------------------------------
+--- original (line 591)
++++ mutant (line 591)
+-    if dependency_cache is None:
++    if not (dependency_cache is None):
+
+------------------------------------------------------------
+Mutant #124 [UOI]
+Description: Insert 'not' operator in condition at line 626
+------------------------------------------------------------
+--- original (line 626)
++++ mutant (line 626)
+-        if solved_result.errors:
++        if not (solved_result.errors):
+
+------------------------------------------------------------
+Mutant #125 [UOI]
+Description: Insert 'not' operator in condition at line 629
+------------------------------------------------------------
+--- original (line 629)
++++ mutant (line 629)
+-        if sub_dependant.use_cache and sub_dependant.cache_key in dependency_cache:
++        if not (sub_dependant.use_cache and sub_dependant.cache_key in dependency_cache):
+
+------------------------------------------------------------
+Mutant #126 [UOI]
+Description: Insert 'not' operator in condition at line 635
+------------------------------------------------------------
+--- original (line 635)
++++ mutant (line 635)
+-            if sub_dependant.scope == "function":
++            if not (sub_dependant.scope == "function"):
+
+------------------------------------------------------------
+Mutant #127 [UOI]
+Description: Insert 'not' operator in condition at line 667
+------------------------------------------------------------
+--- original (line 667)
++++ mutant (line 667)
+-    if dependant.body_params:
++    if not (dependant.body_params):
+
+------------------------------------------------------------
+Mutant #128 [UOI]
+Description: Insert 'not' operator in condition at line 678
+------------------------------------------------------------
+--- original (line 678)
++++ mutant (line 678)
+-    if dependant.http_connection_param_name:
++    if not (dependant.http_connection_param_name):
+
+------------------------------------------------------------
+Mutant #129 [UOI]
+Description: Insert 'not' operator in condition at line 680
+------------------------------------------------------------
+--- original (line 680)
++++ mutant (line 680)
+-    if dependant.request_param_name and isinstance(request, Request):
++    if not (dependant.request_param_name and isinstance(request, Request)):
+
+------------------------------------------------------------
+Mutant #130 [UOI]
+Description: Insert 'not' operator in condition at line 684
+------------------------------------------------------------
+--- original (line 684)
++++ mutant (line 684)
+-    if dependant.background_tasks_param_name:
++    if not (dependant.background_tasks_param_name):
+
+------------------------------------------------------------
+Mutant #131 [UOI]
+Description: Insert 'not' operator in condition at line 685
+------------------------------------------------------------
+--- original (line 685)
++++ mutant (line 685)
+-        if background_tasks is None:
++        if not (background_tasks is None):
+
+------------------------------------------------------------
+Mutant #132 [UOI]
+Description: Insert 'not' operator in condition at line 688
+------------------------------------------------------------
+--- original (line 688)
++++ mutant (line 688)
+-    if dependant.response_param_name:
++    if not (dependant.response_param_name):
+
+------------------------------------------------------------
+Mutant #133 [UOI]
+Description: Insert 'not' operator in condition at line 690
+------------------------------------------------------------
+--- original (line 690)
++++ mutant (line 690)
+-    if dependant.security_scopes_param_name:
++    if not (dependant.security_scopes_param_name):
+
+------------------------------------------------------------
+Mutant #134 [UOI]
+Description: Insert 'not' operator in condition at line 706
+------------------------------------------------------------
+--- original (line 706)
++++ mutant (line 706)
+-    if value is None:
++    if not (value is None):
+
+------------------------------------------------------------
+Mutant #135 [UOI]
+Description: Insert 'not' operator in condition at line 707
+------------------------------------------------------------
+--- original (line 707)
++++ mutant (line 707)
+-        if field.required:
++        if not (field.required):
+
+------------------------------------------------------------
+Mutant #136 [UOI]
+Description: Insert 'not' operator in condition at line 712
+------------------------------------------------------------
+--- original (line 712)
++++ mutant (line 712)
+-    if isinstance(errors_, list):
++    if not (isinstance(errors_, list)):
+
+------------------------------------------------------------
+Mutant #137 [UOI]
+Description: Insert 'not' operator in condition at line 723
+------------------------------------------------------------
+--- original (line 723)
++++ mutant (line 723)
+-    if is_sequence_field(field) and isinstance(values, (ImmutableMultiDict, Headers)):
++    if not (is_sequence_field(field) and isinstance(values, (ImmutableMultiDict, Headers))):
+
+------------------------------------------------------------
+Mutant #138 [UOI]
+Description: Insert 'not' operator in condition at line 736
+------------------------------------------------------------
+--- original (line 736)
++++ mutant (line 736)
+-        if field.required:
++        if not (field.required):
+
+------------------------------------------------------------
+Mutant #139 [UOI]
+Description: Insert 'not' operator in condition at line 757
+------------------------------------------------------------
+--- original (line 757)
++++ mutant (line 757)
+-    if len(fields) == 1 and lenient_issubclass(first_field.type_, BaseModel):
++    if not (len(fields) == 1 and lenient_issubclass(first_field.type_, BaseModel)):
+
+------------------------------------------------------------
+Mutant #140 [UOI]
+Description: Insert 'not' operator in condition at line 772
+------------------------------------------------------------
+--- original (line 772)
++++ mutant (line 772)
+-        if isinstance(received_params, Headers):
++        if not (isinstance(received_params, Headers)):
+
+------------------------------------------------------------
+Mutant #141 [UOI]
+Description: Insert 'not' operator in condition at line 778
+------------------------------------------------------------
+--- original (line 778)
++++ mutant (line 778)
+-            if convert_underscores:
++            if not (convert_underscores):
+
+------------------------------------------------------------
+Mutant #142 [UOI]
+Description: Insert 'not' operator in condition at line 780
+------------------------------------------------------------
+--- original (line 780)
++++ mutant (line 780)
+-                if alias == field.name:
++                if not (alias == field.name):
+
+------------------------------------------------------------
+Mutant #143 [UOI]
+Description: Insert 'not' operator in condition at line 789
+------------------------------------------------------------
+--- original (line 789)
++++ mutant (line 789)
+-            if hasattr(received_params, "getlist"):
++            if not (hasattr(received_params, "getlist")):
+
+------------------------------------------------------------
+Mutant #144 [UOI]
+Description: Insert 'not' operator in condition at line 791
+------------------------------------------------------------
+--- original (line 791)
++++ mutant (line 791)
+-                if isinstance(value, list) and (len(value) == 1):
++                if not (isinstance(value, list) and (len(value) == 1)):
+
+------------------------------------------------------------
+Mutant #145 [UOI]
+Description: Insert 'not' operator in condition at line 819
+------------------------------------------------------------
+--- original (line 819)
++++ mutant (line 819)
+-        if errors_:
++        if not (errors_):
+
+------------------------------------------------------------
+Mutant #146 [UOI]
+Description: Insert 'not' operator in condition at line 852
+------------------------------------------------------------
+--- original (line 852)
++++ mutant (line 852)
+-    if len(body_param_names_set) > 1:
++    if not (len(body_param_names_set) > 1):
+
+------------------------------------------------------------
+Mutant #147 [UOI]
+Description: Insert 'not' operator in condition at line 856
+------------------------------------------------------------
+--- original (line 856)
++++ mutant (line 856)
+-    if getattr(first_field.field_info, "embed", None):
++    if not (getattr(first_field.field_info, "embed", None)):
+
+------------------------------------------------------------
+Mutant #148 [UOI]
+Description: Insert 'not' operator in condition at line 909
+------------------------------------------------------------
+--- original (line 909)
++++ mutant (line 909)
+-            if len(param_values) == 1:
++            if not (len(param_values) == 1):
+
+------------------------------------------------------------
+Mutant #149 [UOI]
+Description: Insert 'not' operator in condition at line 937
+------------------------------------------------------------
+--- original (line 937)
++++ mutant (line 937)
+-    if isinstance(received_body, FormData):
++    if not (isinstance(received_body, FormData)):
+
+------------------------------------------------------------
+Mutant #150 [UOI]
+Description: Insert 'not' operator in condition at line 959
+------------------------------------------------------------
+--- original (line 959)
++++ mutant (line 959)
+-        if errors_:
++        if not (errors_):
+
+------------------------------------------------------------
+Mutant #151 [UOI]
+Description: Insert 'not' operator in condition at line 995
+------------------------------------------------------------
+--- original (line 995)
++++ mutant (line 995)
+-    if any(isinstance(f.field_info, params.File) for f in flat_dependant.body_params):
++    if not (any(isinstance(f.field_info, params.File) for f in flat_dependant.body_params)):
+
+------------------------------------------------------------
+Mutant #152 [UOI]
+Description: Insert 'not' operator in condition at line 1007
+------------------------------------------------------------
+--- original (line 1007)
++++ mutant (line 1007)
+-        if len(set(body_param_media_types)) == 1:
++        if not (len(set(body_param_media_types)) == 1):
+
+

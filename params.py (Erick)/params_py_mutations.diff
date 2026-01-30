@@ -1,0 +1,1688 @@
+================================================================================
+MUTATION DIFF FOR fastapi/params.py
+================================================================================
+
+MUTATION OPERATORS:
+----------------------------------------
+
+ROR - Relational Operator Replacement: Changes comparison operators 
+      (is/is not, in/not in, ==/!=, etc.)
+BCR - Boolean Constant Replacement: Swaps True/False
+COR - Conditional Operator Replacement: Swaps and/or
+NCR - None Constant Replacement: Replaces values with None
+EVR - Enum Value Replacement: Changes enum string values
+CAR - Class Attribute Replacement: Changes class-level attributes
+CDR - Constant/Default Value Replacement: Changes default values
+LNM - Logical Negation Mutation: Negates boolean expressions
+SCR - String Constant Replacement: Modifies string literals
+TCR - Type/Category Replacement: Changes types/categories
+DVR - Dictionary Value Replacement: Changes dict values
+SDL - Statement Deletion: Comments out statements
+ACD - Argument/Call Deletion: Removes function arguments
+SVD - Statement Value Deletion: Simplifies return values
+
+================================================================================
+TOTAL MUTATIONS: 107
+================================================================================
+
+
+============================================================
+OPERATOR: ACD (3 mutations)
+============================================================
+
+--- Mutant 100: ACD-01 (Line 73) ---
+Description: Remove **extra from kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -70,7 +70,7 @@
+         deprecated: Union[deprecated, str, bool, None] = None,
+         include_in_schema: bool = True,
+         json_schema_extra: Union[dict[str, Any], None] = None,
+-        **extra: Any,
++        : Any,
+     ):
+         if example is not _Unset:
+             warnings.warn(
+
+
+--- Mutant 101: ACD-01 (Line 101) ---
+Description: Remove **extra from kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -98,7 +98,7 @@
+             allow_inf_nan=allow_inf_nan,
+             max_digits=max_digits,
+             decimal_places=decimal_places,
+-            **extra,
++            ,
+         )
+         if examples is not None:
+             kwargs["examples"] = examples
+
+
+--- Mutant 102: ACD-01 (Line 184) ---
+Description: Remove **extra from kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -181,7 +181,7 @@
+         deprecated: Union[deprecated, str, bool, None] = None,
+         include_in_schema: bool = True,
+         json_schema_extra: Union[dict[str, Any], None] = None,
+-        **extra: Any,
++        : Any,
+     ):
+         assert default is ..., "Path parameters cannot have a default value"
+         self.in_ = self.in_
+
+
+============================================================
+OPERATOR: BCR (12 mutations)
+============================================================
+
+--- Mutant 20: BCR-01 (Line 71) ---
+Description: Change include_in_schema default
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -68,7 +68,7 @@
+         ] = _Unset,
+         openapi_examples: Optional[dict[str, Example]] = None,
+         deprecated: Union[deprecated, str, bool, None] = None,
+-        include_in_schema: bool = True,
++        include_in_schema: bool = False,
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+
+
+--- Mutant 21: BCR-01 (Line 182) ---
+Description: Change include_in_schema default
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -179,7 +179,7 @@
+         ] = _Unset,
+         openapi_examples: Optional[dict[str, Example]] = None,
+         deprecated: Union[deprecated, str, bool, None] = None,
+-        include_in_schema: bool = True,
++        include_in_schema: bool = False,
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+
+
+--- Mutant 22: BCR-01 (Line 266) ---
+Description: Change include_in_schema default
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -263,7 +263,7 @@
+         ] = _Unset,
+         openapi_examples: Optional[dict[str, Example]] = None,
+         deprecated: Union[deprecated, str, bool, None] = None,
+-        include_in_schema: bool = True,
++        include_in_schema: bool = False,
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+
+
+--- Mutant 23: BCR-01 (Line 349) ---
+Description: Change include_in_schema default
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -346,7 +346,7 @@
+         ] = _Unset,
+         openapi_examples: Optional[dict[str, Example]] = None,
+         deprecated: Union[deprecated, str, bool, None] = None,
+-        include_in_schema: bool = True,
++        include_in_schema: bool = False,
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+
+
+--- Mutant 24: BCR-01 (Line 432) ---
+Description: Change include_in_schema default
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -429,7 +429,7 @@
+         ] = _Unset,
+         openapi_examples: Optional[dict[str, Example]] = None,
+         deprecated: Union[deprecated, str, bool, None] = None,
+-        include_in_schema: bool = True,
++        include_in_schema: bool = False,
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+
+
+--- Mutant 25: BCR-01 (Line 514) ---
+Description: Change include_in_schema default
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -511,7 +511,7 @@
+         ] = _Unset,
+         openapi_examples: Optional[dict[str, Example]] = None,
+         deprecated: Union[deprecated, str, bool, None] = None,
+-        include_in_schema: bool = True,
++        include_in_schema: bool = False,
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+
+
+--- Mutant 26: BCR-01 (Line 625) ---
+Description: Change include_in_schema default
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -622,7 +622,7 @@
+         ] = _Unset,
+         openapi_examples: Optional[dict[str, Example]] = None,
+         deprecated: Union[deprecated, str, bool, None] = None,
+-        include_in_schema: bool = True,
++        include_in_schema: bool = False,
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+
+
+--- Mutant 27: BCR-01 (Line 707) ---
+Description: Change include_in_schema default
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -704,7 +704,7 @@
+         ] = _Unset,
+         openapi_examples: Optional[dict[str, Example]] = None,
+         deprecated: Union[deprecated, str, bool, None] = None,
+-        include_in_schema: bool = True,
++        include_in_schema: bool = False,
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+
+
+--- Mutant 28: BCR-02 (Line 749) ---
+Description: Change use_cache default
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -746,7 +746,7 @@
+ @dataclass(frozen=True)
+ class Depends:
+     dependency: Optional[Callable[..., Any]] = None
+-    use_cache: bool = True
++    use_cache: bool = False
+     scope: Union[Literal["function", "request"], None] = None
+ 
+ 
+
+
+--- Mutant 29: BCR-03 (Line 317) ---
+Description: Change convert_underscores default
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -314,7 +314,7 @@
+         alias_priority: Union[int, None] = _Unset,
+         validation_alias: Union[str, AliasPath, AliasChoices, None] = None,
+         serialization_alias: Union[str, None] = None,
+-        convert_underscores: bool = True,
++        convert_underscores: bool = False,
+         title: Optional[str] = None,
+         description: Optional[str] = None,
+         gt: Optional[float] = None,
+
+
+--- Mutant 30: BCR-04 (Line 746) ---
+Description: Change dataclass frozen
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -743,7 +743,7 @@
+         )
+ 
+ 
+-@dataclass(frozen=True)
++@dataclass(frozen=False)
+ class Depends:
+     dependency: Optional[Callable[..., Any]] = None
+     use_cache: bool = True
+
+
+--- Mutant 105: BCR-05 (Line 477) ---
+Description: Change embed default
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -474,7 +474,7 @@
+         *,
+         default_factory: Union[Callable[[], Any], None] = _Unset,
+         annotation: Optional[Any] = None,
+-        embed: Union[bool, None] = None,
++        embed: Union[bool, None] = True,
+         media_type: str = "application/json",
+         alias: Optional[str] = None,
+         alias_priority: Union[int, None] = _Unset,
+
+
+============================================================
+OPERATOR: CAR (4 mutations)
+============================================================
+
+--- Mutant 39: CAR-01 (Line 223) ---
+Description: Change Query.in_
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -220,7 +220,7 @@
+ 
+ 
+ class Query(Param):  # type: ignore[misc]
+-    in_ = ParamTypes.query
++    in_ = ParamTypes.header
+ 
+     def __init__(
+         self,
+
+
+--- Mutant 40: CAR-02 (Line 305) ---
+Description: Change Header.in_
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -302,7 +302,7 @@
+ 
+ 
+ class Header(Param):  # type: ignore[misc]
+-    in_ = ParamTypes.header
++    in_ = ParamTypes.query
+ 
+     def __init__(
+         self,
+
+
+--- Mutant 41: CAR-03 (Line 139) ---
+Description: Change Path.in_
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -136,7 +136,7 @@
+ 
+ 
+ class Path(Param):  # type: ignore[misc]
+-    in_ = ParamTypes.path
++    in_ = ParamTypes.query
+ 
+     def __init__(
+         self,
+
+
+--- Mutant 42: CAR-04 (Line 389) ---
+Description: Change Cookie.in_
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -386,7 +386,7 @@
+ 
+ 
+ class Cookie(Param):  # type: ignore[misc]
+-    in_ = ParamTypes.cookie
++    in_ = ParamTypes.query
+ 
+     def __init__(
+         self,
+
+
+============================================================
+OPERATOR: CDR (15 mutations)
+============================================================
+
+--- Mutant 43: CDR-01 (Line 79) ---
+Description: Change stacklevel 4->3
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -76,7 +76,7 @@
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+-                stacklevel=4,
++                stacklevel=3,
+             )
+         self.example = example
+         self.include_in_schema = include_in_schema
+
+
+--- Mutant 44: CDR-01 (Line 109) ---
+Description: Change stacklevel 4->3
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -106,7 +106,7 @@
+             warnings.warn(
+                 "`regex` has been deprecated, please use `pattern` instead",
+                 category=FastAPIDeprecationWarning,
+-                stacklevel=4,
++                stacklevel=3,
+             )
+         current_json_schema_extra = json_schema_extra or extra
+         kwargs["deprecated"] = deprecated
+
+
+--- Mutant 45: CDR-01 (Line 524) ---
+Description: Change stacklevel 4->3
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -521,7 +521,7 @@
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+-                stacklevel=4,
++                stacklevel=3,
+             )
+         self.example = example
+         self.include_in_schema = include_in_schema
+
+
+--- Mutant 46: CDR-02 (Line 79) ---
+Description: Change stacklevel 4->5
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -76,7 +76,7 @@
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+-                stacklevel=4,
++                stacklevel=5,
+             )
+         self.example = example
+         self.include_in_schema = include_in_schema
+
+
+--- Mutant 47: CDR-02 (Line 109) ---
+Description: Change stacklevel 4->5
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -106,7 +106,7 @@
+             warnings.warn(
+                 "`regex` has been deprecated, please use `pattern` instead",
+                 category=FastAPIDeprecationWarning,
+-                stacklevel=4,
++                stacklevel=5,
+             )
+         current_json_schema_extra = json_schema_extra or extra
+         kwargs["deprecated"] = deprecated
+
+
+--- Mutant 48: CDR-02 (Line 524) ---
+Description: Change stacklevel 4->5
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -521,7 +521,7 @@
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+-                stacklevel=4,
++                stacklevel=5,
+             )
+         self.example = example
+         self.include_in_schema = include_in_schema
+
+
+--- Mutant 49: CDR-03 (Line 79) ---
+Description: Change stacklevel 4->1
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -76,7 +76,7 @@
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+-                stacklevel=4,
++                stacklevel=1,
+             )
+         self.example = example
+         self.include_in_schema = include_in_schema
+
+
+--- Mutant 50: CDR-03 (Line 109) ---
+Description: Change stacklevel 4->1
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -106,7 +106,7 @@
+             warnings.warn(
+                 "`regex` has been deprecated, please use `pattern` instead",
+                 category=FastAPIDeprecationWarning,
+-                stacklevel=4,
++                stacklevel=1,
+             )
+         current_json_schema_extra = json_schema_extra or extra
+         kwargs["deprecated"] = deprecated
+
+
+--- Mutant 51: CDR-03 (Line 524) ---
+Description: Change stacklevel 4->1
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -521,7 +521,7 @@
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+-                stacklevel=4,
++                stacklevel=1,
+             )
+         self.example = example
+         self.include_in_schema = include_in_schema
+
+
+--- Mutant 52: CDR-04 (Line 79) ---
+Description: Change stacklevel 4->0
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -76,7 +76,7 @@
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+-                stacklevel=4,
++                stacklevel=0,
+             )
+         self.example = example
+         self.include_in_schema = include_in_schema
+
+
+--- Mutant 53: CDR-04 (Line 109) ---
+Description: Change stacklevel 4->0
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -106,7 +106,7 @@
+             warnings.warn(
+                 "`regex` has been deprecated, please use `pattern` instead",
+                 category=FastAPIDeprecationWarning,
+-                stacklevel=4,
++                stacklevel=0,
+             )
+         current_json_schema_extra = json_schema_extra or extra
+         kwargs["deprecated"] = deprecated
+
+
+--- Mutant 54: CDR-04 (Line 524) ---
+Description: Change stacklevel 4->0
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -521,7 +521,7 @@
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+-                stacklevel=4,
++                stacklevel=0,
+             )
+         self.example = example
+         self.include_in_schema = include_in_schema
+
+
+--- Mutant 55: CDR-05 (Line 478) ---
+Description: Change Body media_type
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -475,7 +475,7 @@
+         default_factory: Union[Callable[[], Any], None] = _Unset,
+         annotation: Optional[Any] = None,
+         embed: Union[bool, None] = None,
+-        media_type: str = "application/json",
++        media_type: str = "text/plain",
+         alias: Optional[str] = None,
+         alias_priority: Union[int, None] = _Unset,
+         validation_alias: Union[str, AliasPath, AliasChoices, None] = None,
+
+
+--- Mutant 56: CDR-06 (Line 589) ---
+Description: Change Form media_type
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -586,7 +586,7 @@
+         *,
+         default_factory: Union[Callable[[], Any], None] = _Unset,
+         annotation: Optional[Any] = None,
+-        media_type: str = "application/x-www-form-urlencoded",
++        media_type: str = "text/plain",
+         alias: Optional[str] = None,
+         alias_priority: Union[int, None] = _Unset,
+         validation_alias: Union[str, AliasPath, AliasChoices, None] = None,
+
+
+--- Mutant 57: CDR-07 (Line 671) ---
+Description: Change File media_type
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -668,7 +668,7 @@
+         *,
+         default_factory: Union[Callable[[], Any], None] = _Unset,
+         annotation: Optional[Any] = None,
+-        media_type: str = "multipart/form-data",
++        media_type: str = "text/plain",
+         alias: Optional[str] = None,
+         alias_priority: Union[int, None] = _Unset,
+         validation_alias: Union[str, AliasPath, AliasChoices, None] = None,
+
+
+============================================================
+OPERATOR: COR (4 mutations)
+============================================================
+
+--- Mutant 31: COR-01 (Line 128) ---
+Description: Replace or with and (pattern)
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -125,7 +125,7 @@
+                 "json_schema_extra": current_json_schema_extra,
+             }
+         )
+-        kwargs["pattern"] = pattern or regex
++        kwargs["pattern"] = pattern and regex
+ 
+         use_kwargs = {k: v for k, v in kwargs.items() if v is not _Unset}
+ 
+
+
+--- Mutant 32: COR-01 (Line 572) ---
+Description: Replace or with and (pattern)
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -569,7 +569,7 @@
+                 "json_schema_extra": current_json_schema_extra,
+             }
+         )
+-        kwargs["pattern"] = pattern or regex
++        kwargs["pattern"] = pattern and regex
+ 
+         use_kwargs = {k: v for k, v in kwargs.items() if v is not _Unset}
+ 
+
+
+--- Mutant 33: COR-02 (Line 111) ---
+Description: Replace or with and (json_schema)
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -108,7 +108,7 @@
+                 category=FastAPIDeprecationWarning,
+                 stacklevel=4,
+             )
+-        current_json_schema_extra = json_schema_extra or extra
++        current_json_schema_extra = json_schema_extra and extra
+         kwargs["deprecated"] = deprecated
+ 
+         if serialization_alias in (_Unset, None) and isinstance(alias, str):
+
+
+--- Mutant 34: COR-02 (Line 556) ---
+Description: Replace or with and (json_schema)
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -553,7 +553,7 @@
+                 category=FastAPIDeprecationWarning,
+                 stacklevel=4,
+             )
+-        current_json_schema_extra = json_schema_extra or extra
++        current_json_schema_extra = json_schema_extra and extra
+         kwargs["deprecated"] = deprecated
+         if serialization_alias in (_Unset, None) and isinstance(alias, str):
+             serialization_alias = alias
+
+
+============================================================
+OPERATOR: DVR (12 mutations)
+============================================================
+
+--- Mutant 83: DVR-01 (Line 85) ---
+Description: Replace default in kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -82,7 +82,7 @@
+         self.include_in_schema = include_in_schema
+         self.openapi_examples = openapi_examples
+         kwargs = dict(
+-            default=default,
++            default=None,
+             default_factory=default_factory,
+             alias=alias,
+             title=title,
+
+
+--- Mutant 84: DVR-01 (Line 189) ---
+Description: Replace default in kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -186,7 +186,7 @@
+         assert default is ..., "Path parameters cannot have a default value"
+         self.in_ = self.in_
+         super().__init__(
+-            default=default,
++            default=None,
+             default_factory=default_factory,
+             annotation=annotation,
+             alias=alias,
+
+
+--- Mutant 85: DVR-01 (Line 271) ---
+Description: Replace default in kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -268,7 +268,7 @@
+         **extra: Any,
+     ):
+         super().__init__(
+-            default=default,
++            default=None,
+             default_factory=default_factory,
+             annotation=annotation,
+             alias=alias,
+
+
+--- Mutant 86: DVR-02 (Line 87) ---
+Description: Replace alias in kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -84,7 +84,7 @@
+         kwargs = dict(
+             default=default,
+             default_factory=default_factory,
+-            alias=alias,
++            alias=None,
+             title=title,
+             description=description,
+             gt=gt,
+
+
+--- Mutant 87: DVR-02 (Line 192) ---
+Description: Replace alias in kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -189,7 +189,7 @@
+             default=default,
+             default_factory=default_factory,
+             annotation=annotation,
+-            alias=alias,
++            alias=None,
+             alias_priority=alias_priority,
+             validation_alias=validation_alias,
+             serialization_alias=serialization_alias,
+
+
+--- Mutant 88: DVR-02 (Line 274) ---
+Description: Replace alias in kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -271,7 +271,7 @@
+             default=default,
+             default_factory=default_factory,
+             annotation=annotation,
+-            alias=alias,
++            alias=None,
+             alias_priority=alias_priority,
+             validation_alias=validation_alias,
+             serialization_alias=serialization_alias,
+
+
+--- Mutant 89: DVR-03 (Line 88) ---
+Description: Replace title in kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -85,7 +85,7 @@
+             default=default,
+             default_factory=default_factory,
+             alias=alias,
+-            title=title,
++            title=None,
+             description=description,
+             gt=gt,
+             ge=ge,
+
+
+--- Mutant 90: DVR-03 (Line 196) ---
+Description: Replace title in kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -193,7 +193,7 @@
+             alias_priority=alias_priority,
+             validation_alias=validation_alias,
+             serialization_alias=serialization_alias,
+-            title=title,
++            title=None,
+             description=description,
+             gt=gt,
+             ge=ge,
+
+
+--- Mutant 91: DVR-03 (Line 278) ---
+Description: Replace title in kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -275,7 +275,7 @@
+             alias_priority=alias_priority,
+             validation_alias=validation_alias,
+             serialization_alias=serialization_alias,
+-            title=title,
++            title=None,
+             description=description,
+             gt=gt,
+             ge=ge,
+
+
+--- Mutant 92: DVR-04 (Line 89) ---
+Description: Replace description in kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -86,7 +86,7 @@
+             default_factory=default_factory,
+             alias=alias,
+             title=title,
+-            description=description,
++            description=None,
+             gt=gt,
+             ge=ge,
+             lt=lt,
+
+
+--- Mutant 93: DVR-04 (Line 197) ---
+Description: Replace description in kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -194,7 +194,7 @@
+             validation_alias=validation_alias,
+             serialization_alias=serialization_alias,
+             title=title,
+-            description=description,
++            description=None,
+             gt=gt,
+             ge=ge,
+             lt=lt,
+
+
+--- Mutant 94: DVR-04 (Line 279) ---
+Description: Replace description in kwargs
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -276,7 +276,7 @@
+             validation_alias=validation_alias,
+             serialization_alias=serialization_alias,
+             title=title,
+-            description=description,
++            description=None,
+             gt=gt,
+             ge=ge,
+             lt=lt,
+
+
+============================================================
+OPERATOR: EVR (4 mutations)
+============================================================
+
+--- Mutant 35: EVR-01 (Line 21) ---
+Description: Change query enum
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -18,7 +18,7 @@
+ 
+ 
+ class ParamTypes(Enum):
+-    query = "query"
++    query = "header"
+     header = "header"
+     path = "path"
+     cookie = "cookie"
+
+
+--- Mutant 36: EVR-02 (Line 22) ---
+Description: Change header enum
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -19,7 +19,7 @@
+ 
+ class ParamTypes(Enum):
+     query = "query"
+-    header = "header"
++    header = "query"
+     path = "path"
+     cookie = "cookie"
+ 
+
+
+--- Mutant 37: EVR-03 (Line 23) ---
+Description: Change path enum
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -20,7 +20,7 @@
+ class ParamTypes(Enum):
+     query = "query"
+     header = "header"
+-    path = "path"
++    path = "query"
+     cookie = "cookie"
+ 
+ 
+
+
+--- Mutant 38: EVR-04 (Line 24) ---
+Description: Change cookie enum
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -21,7 +21,7 @@
+     query = "query"
+     header = "header"
+     path = "path"
+-    cookie = "cookie"
++    cookie = "query"
+ 
+ 
+ class Param(FieldInfo):  # type: ignore[misc]
+
+
+============================================================
+OPERATOR: LNM (4 mutations)
+============================================================
+
+--- Mutant 58: LNM-01 (Line 518) ---
+Description: Negate embed assignment
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -515,7 +515,7 @@
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+-        self.embed = embed
++        self.embed = not embed
+         self.media_type = media_type
+         if example is not _Unset:
+             warnings.warn(
+
+
+--- Mutant 59: LNM-02 (Line 82) ---
+Description: Negate include_in_schema
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -79,7 +79,7 @@
+                 stacklevel=4,
+             )
+         self.example = example
+-        self.include_in_schema = include_in_schema
++        self.include_in_schema = not include_in_schema
+         self.openapi_examples = openapi_examples
+         kwargs = dict(
+             default=default,
+
+
+--- Mutant 60: LNM-02 (Line 527) ---
+Description: Negate include_in_schema
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -524,7 +524,7 @@
+                 stacklevel=4,
+             )
+         self.example = example
+-        self.include_in_schema = include_in_schema
++        self.include_in_schema = not include_in_schema
+         self.openapi_examples = openapi_examples
+         kwargs = dict(
+             default=default,
+
+
+--- Mutant 61: LNM-03 (Line 353) ---
+Description: Negate convert_underscores
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -350,7 +350,7 @@
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+-        self.convert_underscores = convert_underscores
++        self.convert_underscores = not convert_underscores
+         super().__init__(
+             default=default,
+             default_factory=default_factory,
+
+
+============================================================
+OPERATOR: NCR (9 mutations)
+============================================================
+
+--- Mutant 62: NCR-01 (Line 81) ---
+Description: Replace example with None
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -78,7 +78,7 @@
+                 category=FastAPIDeprecationWarning,
+                 stacklevel=4,
+             )
+-        self.example = example
++        self.example = None
+         self.include_in_schema = include_in_schema
+         self.openapi_examples = openapi_examples
+         kwargs = dict(
+
+
+--- Mutant 63: NCR-01 (Line 526) ---
+Description: Replace example with None
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -523,7 +523,7 @@
+                 category=FastAPIDeprecationWarning,
+                 stacklevel=4,
+             )
+-        self.example = example
++        self.example = None
+         self.include_in_schema = include_in_schema
+         self.openapi_examples = openapi_examples
+         kwargs = dict(
+
+
+--- Mutant 64: NCR-02 (Line 83) ---
+Description: Replace openapi_examples with None
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -80,7 +80,7 @@
+             )
+         self.example = example
+         self.include_in_schema = include_in_schema
+-        self.openapi_examples = openapi_examples
++        self.openapi_examples = None
+         kwargs = dict(
+             default=default,
+             default_factory=default_factory,
+
+
+--- Mutant 65: NCR-02 (Line 528) ---
+Description: Replace openapi_examples with None
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -525,7 +525,7 @@
+             )
+         self.example = example
+         self.include_in_schema = include_in_schema
+-        self.openapi_examples = openapi_examples
++        self.openapi_examples = None
+         kwargs = dict(
+             default=default,
+             default_factory=default_factory,
+
+
+--- Mutant 66: NCR-03 (Line 32) ---
+Description: Replace Undefined default with None
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -29,7 +29,7 @@
+ 
+     def __init__(
+         self,
+-        default: Any = Undefined,
++        default: Any = None,
+         *,
+         default_factory: Union[Callable[[], Any], None] = _Unset,
+         annotation: Optional[Any] = None,
+
+
+--- Mutant 67: NCR-03 (Line 227) ---
+Description: Replace Undefined default with None
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -224,7 +224,7 @@
+ 
+     def __init__(
+         self,
+-        default: Any = Undefined,
++        default: Any = None,
+         *,
+         default_factory: Union[Callable[[], Any], None] = _Unset,
+         annotation: Optional[Any] = None,
+
+
+--- Mutant 68: NCR-03 (Line 309) ---
+Description: Replace Undefined default with None
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -306,7 +306,7 @@
+ 
+     def __init__(
+         self,
+-        default: Any = Undefined,
++        default: Any = None,
+         *,
+         default_factory: Union[Callable[[], Any], None] = _Unset,
+         annotation: Optional[Any] = None,
+
+
+--- Mutant 69: NCR-03 (Line 393) ---
+Description: Replace Undefined default with None
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -390,7 +390,7 @@
+ 
+     def __init__(
+         self,
+-        default: Any = Undefined,
++        default: Any = None,
+         *,
+         default_factory: Union[Callable[[], Any], None] = _Unset,
+         annotation: Optional[Any] = None,
+
+
+--- Mutant 70: NCR-03 (Line 473) ---
+Description: Replace Undefined default with None
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -470,7 +470,7 @@
+ class Body(FieldInfo):  # type: ignore[misc]
+     def __init__(
+         self,
+-        default: Any = Undefined,
++        default: Any = None,
+         *,
+         default_factory: Union[Callable[[], Any], None] = _Unset,
+         annotation: Optional[Any] = None,
+
+
+============================================================
+OPERATOR: ROR (21 mutations)
+============================================================
+
+--- Mutant 1: ROR-01 (Line 75) ---
+Description: Replace "is not" with "is"
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -72,7 +72,7 @@
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+-        if example is not _Unset:
++        if example is _Unset:
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+
+
+--- Mutant 2: ROR-01 (Line 130) ---
+Description: Replace "is not" with "is"
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -127,7 +127,7 @@
+         )
+         kwargs["pattern"] = pattern or regex
+ 
+-        use_kwargs = {k: v for k, v in kwargs.items() if v is not _Unset}
++        use_kwargs = {k: v for k, v in kwargs.items() if v is _Unset}
+ 
+         super().__init__(**use_kwargs)
+ 
+
+
+--- Mutant 3: ROR-01 (Line 520) ---
+Description: Replace "is not" with "is"
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -517,7 +517,7 @@
+     ):
+         self.embed = embed
+         self.media_type = media_type
+-        if example is not _Unset:
++        if example is _Unset:
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+
+
+--- Mutant 4: ROR-01 (Line 574) ---
+Description: Replace "is not" with "is"
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -571,7 +571,7 @@
+         )
+         kwargs["pattern"] = pattern or regex
+ 
+-        use_kwargs = {k: v for k, v in kwargs.items() if v is not _Unset}
++        use_kwargs = {k: v for k, v in kwargs.items() if v is _Unset}
+ 
+         super().__init__(**use_kwargs)
+ 
+
+
+--- Mutant 5: ROR-02 (Line 103) ---
+Description: Replace "is not None" with "is None"
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -100,7 +100,7 @@
+             decimal_places=decimal_places,
+             **extra,
+         )
+-        if examples is not None:
++        if examples is None:
+             kwargs["examples"] = examples
+         if regex is not None:
+             warnings.warn(
+
+
+--- Mutant 6: ROR-02 (Line 105) ---
+Description: Replace "is not None" with "is None"
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -102,7 +102,7 @@
+         )
+         if examples is not None:
+             kwargs["examples"] = examples
+-        if regex is not None:
++        if regex is None:
+             warnings.warn(
+                 "`regex` has been deprecated, please use `pattern` instead",
+                 category=FastAPIDeprecationWarning,
+
+
+--- Mutant 7: ROR-02 (Line 548) ---
+Description: Replace "is not None" with "is None"
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -545,7 +545,7 @@
+             decimal_places=decimal_places,
+             **extra,
+         )
+-        if examples is not None:
++        if examples is None:
+             kwargs["examples"] = examples
+         if regex is not None:
+             warnings.warn(
+
+
+--- Mutant 8: ROR-02 (Line 550) ---
+Description: Replace "is not None" with "is None"
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -547,7 +547,7 @@
+         )
+         if examples is not None:
+             kwargs["examples"] = examples
+-        if regex is not None:
++        if regex is None:
+             warnings.warn(
+                 "`regex` has been deprecated, please use `pattern` instead",
+                 category=FastAPIDeprecationWarning,
+
+
+--- Mutant 9: ROR-04 (Line 75) ---
+Description: Negate example check
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -72,7 +72,7 @@
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+-        if example is not _Unset:
++        if example is _Unset:
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+
+
+--- Mutant 10: ROR-04 (Line 520) ---
+Description: Negate example check
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -517,7 +517,7 @@
+     ):
+         self.embed = embed
+         self.media_type = media_type
+-        if example is not _Unset:
++        if example is _Unset:
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+
+
+--- Mutant 11: ROR-05 (Line 103) ---
+Description: Negate examples check
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -100,7 +100,7 @@
+             decimal_places=decimal_places,
+             **extra,
+         )
+-        if examples is not None:
++        if examples is None:
+             kwargs["examples"] = examples
+         if regex is not None:
+             warnings.warn(
+
+
+--- Mutant 12: ROR-05 (Line 548) ---
+Description: Negate examples check
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -545,7 +545,7 @@
+             decimal_places=decimal_places,
+             **extra,
+         )
+-        if examples is not None:
++        if examples is None:
+             kwargs["examples"] = examples
+         if regex is not None:
+             warnings.warn(
+
+
+--- Mutant 13: ROR-06 (Line 105) ---
+Description: Negate regex check
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -102,7 +102,7 @@
+         )
+         if examples is not None:
+             kwargs["examples"] = examples
+-        if regex is not None:
++        if regex is None:
+             warnings.warn(
+                 "`regex` has been deprecated, please use `pattern` instead",
+                 category=FastAPIDeprecationWarning,
+
+
+--- Mutant 14: ROR-06 (Line 550) ---
+Description: Negate regex check
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -547,7 +547,7 @@
+         )
+         if examples is not None:
+             kwargs["examples"] = examples
+-        if regex is not None:
++        if regex is None:
+             warnings.warn(
+                 "`regex` has been deprecated, please use `pattern` instead",
+                 category=FastAPIDeprecationWarning,
+
+
+--- Mutant 15: ROR-07 (Line 114) ---
+Description: Negate tuple membership
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -111,7 +111,7 @@
+         current_json_schema_extra = json_schema_extra or extra
+         kwargs["deprecated"] = deprecated
+ 
+-        if serialization_alias in (_Unset, None) and isinstance(alias, str):
++        if serialization_alias not in (_Unset, None) and isinstance(alias, str):
+             serialization_alias = alias
+         if validation_alias in (_Unset, None):
+             validation_alias = alias
+
+
+--- Mutant 16: ROR-07 (Line 116) ---
+Description: Negate tuple membership
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -113,7 +113,7 @@
+ 
+         if serialization_alias in (_Unset, None) and isinstance(alias, str):
+             serialization_alias = alias
+-        if validation_alias in (_Unset, None):
++        if validation_alias not in (_Unset, None):
+             validation_alias = alias
+         kwargs.update(
+             {
+
+
+--- Mutant 17: ROR-07 (Line 558) ---
+Description: Negate tuple membership
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -555,7 +555,7 @@
+             )
+         current_json_schema_extra = json_schema_extra or extra
+         kwargs["deprecated"] = deprecated
+-        if serialization_alias in (_Unset, None) and isinstance(alias, str):
++        if serialization_alias not in (_Unset, None) and isinstance(alias, str):
+             serialization_alias = alias
+         if validation_alias in (_Unset, None):
+             validation_alias = alias
+
+
+--- Mutant 18: ROR-07 (Line 560) ---
+Description: Negate tuple membership
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -557,7 +557,7 @@
+         kwargs["deprecated"] = deprecated
+         if serialization_alias in (_Unset, None) and isinstance(alias, str):
+             serialization_alias = alias
+-        if validation_alias in (_Unset, None):
++        if validation_alias not in (_Unset, None):
+             validation_alias = alias
+         kwargs.update(
+             {
+
+
+--- Mutant 19: ROR-08 (Line 186) ---
+Description: Negate assertion
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -183,7 +183,7 @@
+         json_schema_extra: Union[dict[str, Any], None] = None,
+         **extra: Any,
+     ):
+-        assert default is ..., "Path parameters cannot have a default value"
++        assert default is not ..., "Path parameters cannot have a default value"
+         self.in_ = self.in_
+         super().__init__(
+             default=default,
+
+
+--- Mutant 103: ROR-09 (Line 114) ---
+Description: Remove isinstance check
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -111,7 +111,7 @@
+         current_json_schema_extra = json_schema_extra or extra
+         kwargs["deprecated"] = deprecated
+ 
+-        if serialization_alias in (_Unset, None) and isinstance(alias, str):
++        if serialization_alias in (_Unset, None) :
+             serialization_alias = alias
+         if validation_alias in (_Unset, None):
+             validation_alias = alias
+
+
+--- Mutant 104: ROR-09 (Line 558) ---
+Description: Remove isinstance check
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -555,7 +555,7 @@
+             )
+         current_json_schema_extra = json_schema_extra or extra
+         kwargs["deprecated"] = deprecated
+-        if serialization_alias in (_Unset, None) and isinstance(alias, str):
++        if serialization_alias in (_Unset, None) :
+             serialization_alias = alias
+         if validation_alias in (_Unset, None):
+             validation_alias = alias
+
+
+============================================================
+OPERATOR: SCR (8 mutations)
+============================================================
+
+--- Mutant 71: SCR-01 (Line 21) ---
+Description: Change "query" case
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -18,7 +18,7 @@
+ 
+ 
+ class ParamTypes(Enum):
+-    query = "query"
++    query = "QUERY"
+     header = "header"
+     path = "path"
+     cookie = "cookie"
+
+
+--- Mutant 72: SCR-02 (Line 22) ---
+Description: Change "header" case
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -19,7 +19,7 @@
+ 
+ class ParamTypes(Enum):
+     query = "query"
+-    header = "header"
++    header = "HEADER"
+     path = "path"
+     cookie = "cookie"
+ 
+
+
+--- Mutant 73: SCR-03 (Line 23) ---
+Description: Change "path" case
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -20,7 +20,7 @@
+ class ParamTypes(Enum):
+     query = "query"
+     header = "header"
+-    path = "path"
++    path = "PATH"
+     cookie = "cookie"
+ 
+ 
+
+
+--- Mutant 74: SCR-04 (Line 24) ---
+Description: Change "cookie" case
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -21,7 +21,7 @@
+     query = "query"
+     header = "header"
+     path = "path"
+-    cookie = "cookie"
++    cookie = "COOKIE"
+ 
+ 
+ class Param(FieldInfo):  # type: ignore[misc]
+
+
+--- Mutant 75: SCR-05 (Line 77) ---
+Description: Change warning message
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -74,7 +74,7 @@
+     ):
+         if example is not _Unset:
+             warnings.warn(
+-                "`example` has been deprecated, please use `examples` instead",
++                "`examples` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+                 stacklevel=4,
+             )
+
+
+--- Mutant 76: SCR-05 (Line 522) ---
+Description: Change warning message
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -519,7 +519,7 @@
+         self.media_type = media_type
+         if example is not _Unset:
+             warnings.warn(
+-                "`example` has been deprecated, please use `examples` instead",
++                "`examples` has been deprecated, please use `examples` instead",
+                 category=FastAPIDeprecationWarning,
+                 stacklevel=4,
+             )
+
+
+--- Mutant 77: SCR-06 (Line 107) ---
+Description: Change warning message
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -104,7 +104,7 @@
+             kwargs["examples"] = examples
+         if regex is not None:
+             warnings.warn(
+-                "`regex` has been deprecated, please use `pattern` instead",
++                "`pattern` has been deprecated, please use `pattern` instead",
+                 category=FastAPIDeprecationWarning,
+                 stacklevel=4,
+             )
+
+
+--- Mutant 78: SCR-06 (Line 552) ---
+Description: Change warning message
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -549,7 +549,7 @@
+             kwargs["examples"] = examples
+         if regex is not None:
+             warnings.warn(
+-                "`regex` has been deprecated, please use `pattern` instead",
++                "`pattern` has been deprecated, please use `pattern` instead",
+                 category=FastAPIDeprecationWarning,
+                 stacklevel=4,
+             )
+
+
+============================================================
+OPERATOR: SDL (5 mutations)
+============================================================
+
+--- Mutant 95: SDL-01 (Line 187) ---
+Description: Comment out self.in_ assignment
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -184,7 +184,7 @@
+         **extra: Any,
+     ):
+         assert default is ..., "Path parameters cannot have a default value"
+-        self.in_ = self.in_
++        # self.in_ = self.in_
+         super().__init__(
+             default=default,
+             default_factory=default_factory,
+
+
+--- Mutant 96: SDL-02 (Line 112) ---
+Description: Comment out deprecated assignment
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -109,7 +109,7 @@
+                 stacklevel=4,
+             )
+         current_json_schema_extra = json_schema_extra or extra
+-        kwargs["deprecated"] = deprecated
++        # kwargs["deprecated"] = deprecated
+ 
+         if serialization_alias in (_Unset, None) and isinstance(alias, str):
+             serialization_alias = alias
+
+
+--- Mutant 97: SDL-02 (Line 557) ---
+Description: Comment out deprecated assignment
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -554,7 +554,7 @@
+                 stacklevel=4,
+             )
+         current_json_schema_extra = json_schema_extra or extra
+-        kwargs["deprecated"] = deprecated
++        # kwargs["deprecated"] = deprecated
+         if serialization_alias in (_Unset, None) and isinstance(alias, str):
+             serialization_alias = alias
+         if validation_alias in (_Unset, None):
+
+
+--- Mutant 98: SDL-03 (Line 128) ---
+Description: Comment out pattern assignment
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -125,7 +125,7 @@
+                 "json_schema_extra": current_json_schema_extra,
+             }
+         )
+-        kwargs["pattern"] = pattern or regex
++        # kwargs["pattern"] = pattern or regex
+ 
+         use_kwargs = {k: v for k, v in kwargs.items() if v is not _Unset}
+ 
+
+
+--- Mutant 99: SDL-03 (Line 572) ---
+Description: Comment out pattern assignment
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -569,7 +569,7 @@
+                 "json_schema_extra": current_json_schema_extra,
+             }
+         )
+-        kwargs["pattern"] = pattern or regex
++        # kwargs["pattern"] = pattern or regex
+ 
+         use_kwargs = {k: v for k, v in kwargs.items() if v is not _Unset}
+ 
+
+
+============================================================
+OPERATOR: SVD (2 mutations)
+============================================================
+
+--- Mutant 106: SVD-01 (Line 135) ---
+Description: Simplify __repr__
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -132,7 +132,7 @@
+         super().__init__(**use_kwargs)
+ 
+     def __repr__(self) -> str:
+-        return f"{self.__class__.__name__}({self.default})"
++        return f"{self.__class__.__name__}()"
+ 
+ 
+ class Path(Param):  # type: ignore[misc]
+
+
+--- Mutant 107: SVD-01 (Line 579) ---
+Description: Simplify __repr__
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -576,7 +576,7 @@
+         super().__init__(**use_kwargs)
+ 
+     def __repr__(self) -> str:
+-        return f"{self.__class__.__name__}({self.default})"
++        return f"{self.__class__.__name__}()"
+ 
+ 
+ class Form(Body):  # type: ignore[misc]
+
+
+============================================================
+OPERATOR: TCR (4 mutations)
+============================================================
+
+--- Mutant 79: TCR-01 (Line 78) ---
+Description: Change warning category
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -75,7 +75,7 @@
+         if example is not _Unset:
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+-                category=FastAPIDeprecationWarning,
++                category=DeprecationWarning,
+                 stacklevel=4,
+             )
+         self.example = example
+
+
+--- Mutant 80: TCR-01 (Line 108) ---
+Description: Change warning category
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -105,7 +105,7 @@
+         if regex is not None:
+             warnings.warn(
+                 "`regex` has been deprecated, please use `pattern` instead",
+-                category=FastAPIDeprecationWarning,
++                category=DeprecationWarning,
+                 stacklevel=4,
+             )
+         current_json_schema_extra = json_schema_extra or extra
+
+
+--- Mutant 81: TCR-01 (Line 523) ---
+Description: Change warning category
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -520,7 +520,7 @@
+         if example is not _Unset:
+             warnings.warn(
+                 "`example` has been deprecated, please use `examples` instead",
+-                category=FastAPIDeprecationWarning,
++                category=DeprecationWarning,
+                 stacklevel=4,
+             )
+         self.example = example
+
+
+--- Mutant 82: TCR-01 (Line 553) ---
+Description: Change warning category
+--- a/fastapi/params.py
++++ b/fastapi/params.py
+@@ -550,7 +550,7 @@
+         if regex is not None:
+             warnings.warn(
+                 "`regex` has been deprecated, please use `pattern` instead",
+-                category=FastAPIDeprecationWarning,
++                category=DeprecationWarning,
+                 stacklevel=4,
+             )
+         current_json_schema_extra = json_schema_extra or extra
+
